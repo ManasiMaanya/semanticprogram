@@ -6,11 +6,11 @@
 
 - **Repo:** https://github.com/ManasiMaanya/semanticprogram
 - **Branch:** `main`
-- **Last committed revision:** `0e3b113` — "Add the Déjà Code semantic retrieval project."
+- **Last committed revision:** `20c3f70` (tag `v1.0`, pushed to `origin/main`).
 - **Snapshot date:** 2026-10-17
 - **Overall status:** functional and demonstrable. Every required deliverable and every
-  bonus item exists and runs. What remains is hardening, documentation consistency, and
-  evaluation depth — not missing features.
+  bonus item exists and runs. Phase P0 is complete; what remains is hardening,
+  documentation consistency, and evaluation depth — not missing features.
 
 ---
 
@@ -81,7 +81,7 @@ Estimates are focused-work hours for one person. `P0`/`P1` are effectively requi
 
 | Phase | Scope | Deliverable | Est. | Depends on | Status |
 | --- | --- | --- | --- | --- | --- |
-| **P0 — Freeze & ship** | Commit the working improvements, push to `origin/main`, tag `v1.0` | Clean `main` with a green test run | 0.5 h | — | ⬜ Not started |
+| **P0 — Freeze & ship** | Commit the working improvements, push to `origin/main`, tag `v1.0` | Clean `main` with a green test run | 0.5 h | — | ✅ Done (`20c3f70`) |
 | **P1 — Doc & consistency** | Fix I-2, I-3; align README thresholds/model names with code; add `dev-requirements.txt` + pytest shim | README matches code; `pytest` runs | 1.0–1.5 h | P0 | ⬜ Not started |
 | **P2 — Evaluation depth** | Manual gold set (~50 problem pairs, 2 annotators or self + rubric), report agreement; add recall@k curve and run-to-run seed variance | `reports/gold_set.*`, new section in `evaluation.md` | 3–4 h | P0 | ⬜ Not started |
 | **P3 — Cluster explanation** | Representative problem per cluster + 2–3 sentence "why similar" narrative; embed in README and app Clusters tab | `reports/clusters_explained.md`, app panel | 2–3 h | P0 | ⬜ Not started |
@@ -99,13 +99,14 @@ Estimates are focused-work hours for one person. `P0`/`P1` are effectively requi
 | Date | Phase | What changed | Revision |
 | --- | --- | --- | --- |
 | 2026-10-17 | Audit | Cloned/linked repo, ran tests (5/5 pass), audited deliverables, found I-1…I-7, wrote this plan | `0e3b113` + dirty tree |
+| 2026-10-17 | P0 | Committed the six improved source/doc files plus `tests/`, `reports/`, and non-ignored `artifacts/` + `data/processed/`; pushed `main`; tagged `v1.0`. Tree clean, `origin/main` level. | `20c3f70`, tag `v1.0` |
 
 ---
 
 ## 5. Working agreements / next action
 
-1. **Next action:** Phase P0 — commit the six modified files with a descriptive message,
-   then push, then start P1 doc fixes.
+1. **Next action:** Phase P1 — fix I-2 (stale MiniLM reference) and I-3 (18% vs 12%
+   threshold), then add `dev-requirements.txt` with `pytest` so `pytest -q` runs.
 2. Keep `PLAN.md`, `README.md`, and the code thresholds in sync — the 12%/20%/"always
    generic" tag rules are the most error-prone spot.
 3. Any change to preprocessing or the model invalidates `artifacts/`; re-run
