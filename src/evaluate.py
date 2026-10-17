@@ -1,9 +1,10 @@
 """Tag-based retrieval evaluation, hybrid-weight selection, and error analysis.
 
 Topic tags are held out of the index. A retrieved problem is relevant when it
-shares a specific tag with the query. Tags that cover more than 15% of the
-tagged collection are treated as generic and ignored, so "Basic Programming"
-does not mark thousands of unrelated problems as relevant.
+shares a specific tag with the query. Tags that cover more than 20% of the
+tagged collection are treated as generic and ignored, so "Algorithms" does not
+mark hundreds of unrelated problems as relevant. Dynamic programming stays in,
+because it is a real technique even though it is common.
 """
 
 from __future__ import annotations
@@ -27,6 +28,8 @@ TAG_ALIASES = {
     "tree algos": "trees",
     "tree algorithms": "trees",
     "dynamic programming": "dp",
+    "dynamic-programming": "dp",
+    "ad-hoc": "ad hoc",
     "basic math": "math",
     "mathematics": "math",
     "simple math": "math",
@@ -44,16 +47,28 @@ def canonicalize(tag: str) -> str:
     return TAG_ALIASES.get(tag, tag)
 
 
-def specific_tags(frame: pd.DataFrame, max_share: float = 0.15) -> tuple[list[set[str]], set[str]]:
+# These labels mean "this is a programming problem", not a technique.
+ALWAYS_GENERIC = {
+    "algorithms",
+    "mathematics",
+    "math",
+    "basic math",
+    "simple math",
+    "data structures",
+    "basic programming concepts",
+}
+
+
+def specific_tags(frame: pd.DataFrame, max_share: float = 0.20) -> tuple[list[set[str]], set[str]]:
     counts: dict[str, int] = {}
     lowered = []
     for tags in frame["tags"]:
-        keys = {canonicalize(tag) for tag in tags}
+        keys = {canonicalize(tag) for tag in tags} - ALWAYS_GENERIC
         lowered.append(keys)
         for tag in keys:
             counts[tag] = counts.get(tag, 0) + 1
     tagged = max(1, sum(1 for keys in lowered if keys))
-    generic = {tag for tag, count in counts.items() if count / tagged > max_share}
+    generic = set(ALWAYS_GENERIC) | {tag for tag, count in counts.items() if count / tagged > max_share}
     specific = [keys - generic for keys in lowered]
     return specific, generic
 
@@ -69,6 +84,16 @@ def jaccard(a: str, b: str) -> float:
     if not ta or not tb:
         return 0.0
     return len(ta & tb) / len(ta | tb)
+
+
+def family_key(title: str) -> str:
+    import re
+
+    title = title.lower()
+    title = re.sub(r"\(.*?\)", " ", title)
+    title = re.sub(r"\b(easy|hard|medium|version)\b", " ", title)
+    title = re.sub(r"[^a-z0-9]+", " ", title)
+    return re.sub(r"\s+", " ", title).strip()
 
 
 def ranking_metrics(flags: list[bool], n_relevant: int, k: int) -> dict[str, float]:
@@ -112,7 +137,6 @@ def evaluate_split(
     queries: list[int],
     relevance: list[set[int]],
     alpha: float,
-    k: int = 10,
 ) -> dict[str, float]:
     buckets: dict[str, list[float]] = {}
     for query in queries:
@@ -121,8 +145,12 @@ def evaluate_split(
             continue
         scores = alpha * semantic[query] + (1.0 - alpha) * keyword[query]
         order = np.argsort(-scores)
-        flags = ranked_flags(order, query, relevance[query], k)
-        for name, value in ranking_metrics(flags, n_rel, k).items():
+        flags = ranked_flags(order, query, relevance[query], 10)
+        stats = ranking_metrics(flags, n_rel, 10)
+        for name, value in ranking_metrics(flags, n_rel, 5).items():
+            if name != "mrr":
+                stats[name] = value
+        for name, value in stats.items():
             buckets.setdefault(name, []).append(value)
     return {name: float(np.mean(values)) for name, values in buckets.items()}
 
@@ -175,12 +203,12 @@ def run() -> dict:
         comparison[mode] = evaluate_split(semantic, keyword, test, relevance, alpha)
 
     # Qualitative slices use the full query pool and the selected hybrid weight.
-    hybrid = mode_scores(semantic, keyword, "hybrid", best_alpha)
     cross_story = []
     errors = []
+    seen_pairs = set()
     texts = frame["text"].tolist()
     for query in queries:
-        order = [int(i) for i in np.argsort(-hybrid[query]) if int(i) != query]
+        order = [int(i) for i in np.argsort(-semantic[query]) if int(i) != query]
         top = order[0]
         shared = sorted(tag_sets[query] & tag_sets[top])
         overlap = jaccard(texts[query], texts[top])
@@ -196,10 +224,34 @@ def run() -> dict:
             "keyword": float(keyword[query, top]),
             "lexical_jaccard": overlap,
         }
-        if shared and overlap < 0.08 and semantic[query, top] >= 0.55:
-            cross_story.append(record)
-        if not shared and tag_sets[top]:
-            kind = "shared wording, different concept" if overlap >= 0.12 or keyword[query, top] >= 0.25 else "similar narrative frame"
+        for neighbor in order[:20]:
+            shared_n = sorted(tag_sets[query] & tag_sets[neighbor])
+            overlap_n = jaccard(texts[query], texts[neighbor])
+            pair = tuple(sorted((frame.at[query, "code"], frame.at[neighbor, "code"])))
+            if (
+                shared_n
+                and overlap_n < 0.10
+                and semantic[query, neighbor] >= 0.55
+                and pair not in seen_pairs
+            ):
+                seen_pairs.add(pair)
+                cross_story.append(
+                    {
+                        **record,
+                        "neighbor_code": frame.at[neighbor, "code"],
+                        "neighbor_title": frame.at[neighbor, "title"],
+                        "neighbor_tags": sorted(tag_sets[neighbor]),
+                        "shared_tags": shared_n,
+                        "semantic": float(semantic[query, neighbor]),
+                        "keyword": float(keyword[query, neighbor]),
+                        "lexical_jaccard": overlap_n,
+                        "rank": order.index(neighbor) + 1,
+                    }
+                )
+                break
+        same_problem = family_key(frame.at[query, "title"]) == family_key(frame.at[top, "title"])
+        if not shared and tag_sets[top] and not same_problem:
+            kind = "shared wording, different concept" if overlap >= 0.12 or keyword[query, top] >= 0.2 else "similar narrative frame"
             errors.append({**record, "kind": kind})
 
     cross_story.sort(key=lambda row: row["semantic"] - row["lexical_jaccard"], reverse=True)
@@ -210,6 +262,8 @@ def run() -> dict:
         "n_queries": len(queries),
         "n_tune": len(tune),
         "n_test": len(test),
+        "median_relevant": float(np.median([len(relevance[i]) for i in queries])),
+        "mean_relevant": float(np.mean([len(relevance[i]) for i in queries])),
         "generic_tags_ignored": sorted(generic),
         "best_alpha": best_alpha,
         "tuning": tuning,
@@ -229,23 +283,25 @@ def render_markdown(summary: dict) -> str:
     lines = [
         "# Retrieval evaluation",
         "",
-        "Relevance is automatic and tag-based. A problem is relevant to a query when they share at least one specific topic tag. Tags used by more than 15% of tagged problems are ignored. The query problem itself is excluded. Hybrid weight `alpha` is the semantic share, chosen by AP@10 on the tuning half and reported on the held-out half.",
+        "Relevance is automatic and tag-based. A problem is relevant to a query when they share at least one specific topic tag. Tags used by more than 20% of tagged problems are ignored (`Algorithms`, `Mathematics`, `Data Structures`). Dynamic programming is kept. The query problem itself is excluded. Hybrid weight `alpha` is the semantic share, chosen by AP@10 on the tuning half and reported on the held-out half.",
         "",
         f"- Problems indexed: {summary['n_problems']}",
         f"- Queries with at least 3 relevant problems: {summary['n_queries']} (tune {summary['n_tune']}, test {summary['n_test']})",
+        f"- Median relevant problems per query: {summary['median_relevant']:.0f}. Recall@10 stays small because most queries have many more than 10 tagged cousins.",
         f"- Selected hybrid alpha: {summary['best_alpha']}",
         f"- Generic tags ignored: {', '.join(summary['generic_tags_ignored']) or 'none'}",
         "",
         "## Held-out comparison",
         "",
-        "| Method | P@10 | R@10 | AP@10 | nDCG@10 | MRR |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "| Method | P@5 | P@10 | R@10 | AP@10 | nDCG@10 | MRR |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
     ]
     for mode in ("keyword", "semantic", "hybrid"):
         metrics = summary["test_comparison"][mode]
         lines.append(
-            "| {mode} | {p:.3f} | {r:.3f} | {a:.3f} | {n:.3f} | {m:.3f} |".format(
+            "| {mode} | {p5:.3f} | {p:.3f} | {r:.3f} | {a:.3f} | {n:.3f} | {m:.3f} |".format(
                 mode=mode,
+                p5=metrics["precision@5"],
                 p=metrics["precision@10"],
                 r=metrics["recall@10"],
                 a=metrics["ap@10"],
@@ -257,7 +313,7 @@ def render_markdown(summary: dict) -> str:
         "",
         "## Same concept, different wording",
         "",
-        "These pairs are each other's nearest hybrid neighbor, share a topic tag, and have token Jaccard under 0.08.",
+        "Each pair shares a specific topic tag, has token Jaccard under 0.10, and semantic similarity of at least 0.55. The neighbor is inside the top 20 by embedding similarity, so the stories can differ while the technique matches.",
         "",
     ]
     if not summary["cross_story_examples"]:

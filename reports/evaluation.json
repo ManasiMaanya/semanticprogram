@@ -1,0 +1,677 @@
+{
+  "n_problems": 1316,
+  "n_queries": 1025,
+  "n_tune": 512,
+  "n_test": 513,
+  "median_relevant": 152.0,
+  "mean_relevant": 148.22634146341463,
+  "generic_tags_ignored": [
+    "algorithms",
+    "basic math",
+    "basic programming concepts",
+    "data structures",
+    "math",
+    "mathematics",
+    "simple math"
+  ],
+  "best_alpha": 0.65,
+  "tuning": [
+    {
+      "alpha": 0.0,
+      "precision@10": 0.2419921875,
+      "recall@10": 0.02216164622033933,
+      "ap@10": 0.13271848648313492,
+      "ndcg@10": 0.2419125229038745,
+      "mrr": 0.41132967509920637,
+      "precision@5": 0.24296875,
+      "recall@5": 0.011510157282348743,
+      "ap@5": 0.15658203125,
+      "ndcg@5": 0.24206505317335947
+    },
+    {
+      "alpha": 0.35,
+      "precision@10": 0.25214843750000004,
+      "recall@10": 0.023291128292476176,
+      "ap@10": 0.14154761904761903,
+      "ndcg@10": 0.2534246101569065,
+      "mrr": 0.4223570808531746,
+      "precision@5": 0.259375,
+      "recall@5": 0.013174943209056033,
+      "ap@5": 0.170625,
+      "ndcg@5": 0.25724519388895817
+    },
+    {
+      "alpha": 0.5,
+      "precision@10": 0.2529296875,
+      "recall@10": 0.02342575476725162,
+      "ap@10": 0.14342277405753967,
+      "ndcg@10": 0.25603918455755736,
+      "mrr": 0.4312872023809524,
+      "precision@5": 0.26875000000000004,
+      "recall@5": 0.013375697732117234,
+      "ap@5": 0.17369140624999999,
+      "ndcg@5": 0.2652324384767212
+    },
+    {
+      "alpha": 0.65,
+      "precision@10": 0.253515625,
+      "recall@10": 0.022910949888209714,
+      "ap@10": 0.14371419270833333,
+      "ndcg@10": 0.25771137309951264,
+      "mrr": 0.4403924851190476,
+      "precision@5": 0.26640625,
+      "recall@5": 0.01266583552843832,
+      "ap@5": 0.17625000000000002,
+      "ndcg@5": 0.26686363516244194
+    },
+    {
+      "alpha": 0.8,
+      "precision@10": 0.2419921875,
+      "recall@10": 0.02064632570604842,
+      "ap@10": 0.13710813492063492,
+      "ndcg@10": 0.2488932272242506,
+      "mrr": 0.43988482762896824,
+      "precision@5": 0.25664062500000007,
+      "recall@5": 0.01116609943767877,
+      "ap@5": 0.1705859375,
+      "ndcg@5": 0.2603942468436658
+    },
+    {
+      "alpha": 1.0,
+      "precision@10": 0.2275390625,
+      "recall@10": 0.01874854359779614,
+      "ap@10": 0.1273677765376984,
+      "ndcg@10": 0.23503970844466857,
+      "mrr": 0.4206325954861111,
+      "precision@5": 0.24726562500000002,
+      "recall@5": 0.010210019521059318,
+      "ap@5": 0.16568359375,
+      "ndcg@5": 0.24983281223561626
+    }
+  ],
+  "test_comparison": {
+    "keyword": {
+      "precision@10": 0.25886939571150097,
+      "recall@10": 0.02331020571365799,
+      "ap@10": 0.15275054921253753,
+      "ndcg@10": 0.2657601548965152,
+      "mrr": 0.45612874779541446,
+      "precision@5": 0.27446393762183235,
+      "recall@5": 0.013305511502784492,
+      "ap@5": 0.18792072774528915,
+      "ndcg@5": 0.2776079574649998
+    },
+    "semantic": {
+      "precision@10": 0.2456140350877193,
+      "recall@10": 0.019039647781339524,
+      "ap@10": 0.14089173551161854,
+      "ndcg@10": 0.254314535945578,
+      "mrr": 0.44705977907732286,
+      "precision@5": 0.26471734892787524,
+      "recall@5": 0.010649346618625656,
+      "ap@5": 0.17857050032488633,
+      "ndcg@5": 0.26877122942613163
+    },
+    "hybrid": {
+      "precision@10": 0.26920077972709555,
+      "recall@10": 0.0229362891487183,
+      "ap@10": 0.1615203904823788,
+      "ndcg@10": 0.2769721577707566,
+      "mrr": 0.4638084408552245,
+      "precision@5": 0.2892787524366472,
+      "recall@5": 0.013271421511852614,
+      "ap@5": 0.20104613385315143,
+      "ndcg@5": 0.2913328158770893
+    }
+  },
+  "cross_story_count": 205,
+  "error_count": 567,
+  "cross_story_examples": [
+    {
+      "query_code": "DIVQUERY",
+      "query_title": "Chef and The Divisibility Queries",
+      "query_tags": [
+        "integer factorisation",
+        "number theory",
+        "offline queries",
+        "queries"
+      ],
+      "neighbor_code": "PARPERM",
+      "neighbor_title": "Partition It",
+      "neighbor_tags": [
+        "implementation",
+        "number theory",
+        "sieve of eratosthenes"
+      ],
+      "shared_tags": [
+        "number theory"
+      ],
+      "semantic": 0.8266848921775818,
+      "keyword": 0.0,
+      "lexical_jaccard": 0.05194805194805195,
+      "rank": 4
+    },
+    {
+      "query_code": "AMXOR",
+      "query_title": "XOR Sum",
+      "query_tags": [
+        "bit manipulation",
+        "dp",
+        "dp approach"
+      ],
+      "neighbor_code": "XOR2",
+      "neighbor_title": "Consecutive Xor",
+      "neighbor_tags": [
+        "bit manipulation",
+        "bitwise operation",
+        "observation"
+      ],
+      "shared_tags": [
+        "bit manipulation"
+      ],
+      "semantic": 0.866020917892456,
+      "keyword": 0.06598720061004684,
+      "lexical_jaccard": 0.09333333333333334,
+      "rank": 1
+    },
+    {
+      "query_code": "THREENUMBERS",
+      "query_title": "Three Numbers",
+      "query_tags": [
+        "observation"
+      ],
+      "neighbor_code": "PLMU",
+      "neighbor_title": "Plus Multiply",
+      "neighbor_tags": [
+        "ad hoc",
+        "combinatorics",
+        "constructive",
+        "observation"
+      ],
+      "shared_tags": [
+        "observation"
+      ],
+      "semantic": 0.8190193176269531,
+      "keyword": 0.007756723546794003,
+      "lexical_jaccard": 0.06666666666666667,
+      "rank": 2
+    },
+    {
+      "query_code": "CHANOQ",
+      "query_title": "Chef and odd queries",
+      "query_tags": [
+        "advanced algorithms",
+        "advanced data structures",
+        "persistent segment trees",
+        "persistent structures",
+        "square root decomposition"
+      ],
+      "neighbor_code": "CHGORAM",
+      "neighbor_title": "Chef and Gordon Ramsay",
+      "neighbor_tags": [
+        "advanced data structures",
+        "advanced tree structures",
+        "dfs",
+        "euler tour",
+        "fenwick trees",
+        "graphs",
+        "policy based data structures",
+        "segment trees",
+        "traversals",
+        "trees"
+      ],
+      "shared_tags": [
+        "advanced data structures"
+      ],
+      "semantic": 0.8051178455352783,
+      "keyword": 0.018742741184457772,
+      "lexical_jaccard": 0.07142857142857142,
+      "rank": 6
+    },
+    {
+      "query_code": "COOLCHEF",
+      "query_title": "Chef and His Dish",
+      "query_tags": [
+        "advanced algorithms",
+        "combinatorics",
+        "coordinate compression",
+        "online queries",
+        "permutations & combinations",
+        "pre processing",
+        "queries",
+        "square root decomposition"
+      ],
+      "neighbor_code": "DIVQUERY",
+      "neighbor_title": "Chef and The Divisibility Queries",
+      "neighbor_tags": [
+        "integer factorisation",
+        "number theory",
+        "offline queries",
+        "queries"
+      ],
+      "shared_tags": [
+        "queries"
+      ],
+      "semantic": 0.8217728137969971,
+      "keyword": 0.05820056919492472,
+      "lexical_jaccard": 0.09090909090909091,
+      "rank": 12
+    },
+    {
+      "query_code": "INTXOR",
+      "query_title": "Chef and Interactive XOR",
+      "query_tags": [
+        "bit manipulation",
+        "interactive problems",
+        "special"
+      ],
+      "neighbor_code": "STRINGXOR",
+      "neighbor_title": "Consecutive XOR",
+      "neighbor_tags": [
+        "ad hoc",
+        "bit manipulation",
+        "bitwise operation",
+        "constructive",
+        "loops"
+      ],
+      "shared_tags": [
+        "bit manipulation"
+      ],
+      "semantic": 0.827703058719635,
+      "keyword": 0.06901234904274142,
+      "lexical_jaccard": 0.09859154929577464,
+      "rank": 17
+    },
+    {
+      "query_code": "CHEF1010",
+      "query_title": "Chef Loves 1010",
+      "query_tags": [
+        "ad hoc",
+        "constructive",
+        "greedy",
+        "observation",
+        "string"
+      ],
+      "neighbor_code": "S08E12",
+      "neighbor_title": "The One Where Joey Dates Rachel",
+      "neighbor_tags": [
+        "ad hoc",
+        "constructive",
+        "observation",
+        "string"
+      ],
+      "shared_tags": [
+        "ad hoc",
+        "constructive",
+        "observation",
+        "string"
+      ],
+      "semantic": 0.8169847130775452,
+      "keyword": 0.08175024331758662,
+      "lexical_jaccard": 0.09615384615384616,
+      "rank": 7
+    },
+    {
+      "query_code": "XORABC",
+      "query_title": "Pairwise Xors",
+      "query_tags": [
+        "bit manipulation"
+      ],
+      "neighbor_code": "INTXOR",
+      "neighbor_title": "Chef and Interactive XOR",
+      "neighbor_tags": [
+        "bit manipulation",
+        "interactive problems",
+        "special"
+      ],
+      "shared_tags": [
+        "bit manipulation"
+      ],
+      "semantic": 0.8014363050460815,
+      "keyword": 0.058913985271255305,
+      "lexical_jaccard": 0.08527131782945736,
+      "rank": 17
+    },
+    {
+      "query_code": "AMSGAME1",
+      "query_title": "Subtraction Game 1",
+      "query_tags": [
+        "gcd",
+        "number theory",
+        "observation"
+      ],
+      "neighbor_code": "CHNUM",
+      "neighbor_title": "Chef and Number Game",
+      "neighbor_tags": [
+        "observation"
+      ],
+      "shared_tags": [
+        "observation"
+      ],
+      "semantic": 0.808932900428772,
+      "keyword": 0.021984940577732964,
+      "lexical_jaccard": 0.0967741935483871,
+      "rank": 3
+    },
+    {
+      "query_code": "SEAND2",
+      "query_title": "Sereja and Number Division 2",
+      "query_tags": [
+        "challenge problem"
+      ],
+      "neighbor_code": "SEAVEC",
+      "neighbor_title": "Sereja and Vectors",
+      "neighbor_tags": [
+        "challenge problem"
+      ],
+      "shared_tags": [
+        "challenge problem"
+      ],
+      "semantic": 0.7943986654281616,
+      "keyword": 0.12881010041606533,
+      "lexical_jaccard": 0.08333333333333333,
+      "rank": 4
+    },
+    {
+      "query_code": "SEREJA",
+      "query_title": "Sereja and Data Structures ",
+      "query_tags": [
+        "advanced algorithms",
+        "modular arithmetic",
+        "modulo multiplicative inverse",
+        "pre processing",
+        "queries",
+        "range minimum queries"
+      ],
+      "neighbor_code": "SEAPERMS",
+      "neighbor_title": "Sereja and Permutations",
+      "neighbor_tags": [
+        "advanced algorithms",
+        "combinatorics",
+        "modular arithmetic",
+        "modulo multiplicative inverse",
+        "pre processing"
+      ],
+      "shared_tags": [
+        "advanced algorithms",
+        "modular arithmetic",
+        "modulo multiplicative inverse",
+        "pre processing"
+      ],
+      "semantic": 0.7914531230926514,
+      "keyword": 0.11294540698768589,
+      "lexical_jaccard": 0.08064516129032258,
+      "rank": 3
+    },
+    {
+      "query_code": "GCDSUBARRAYS",
+      "query_title": "Gcd of Subarrays",
+      "query_tags": [
+        "gcd",
+        "number theory"
+      ],
+      "neighbor_code": "D4",
+      "neighbor_title": "Primes in the GCD table",
+      "neighbor_tags": [
+        "number theory",
+        "primes"
+      ],
+      "shared_tags": [
+        "number theory"
+      ],
+      "semantic": 0.8023461103439331,
+      "keyword": 0.07189275303332611,
+      "lexical_jaccard": 0.09210526315789473,
+      "rank": 5
+    }
+  ],
+  "error_examples": [
+    {
+      "query_code": "GOOD2",
+      "query_title": "Good Array 2",
+      "query_tags": [
+        "lazy-propagation",
+        "segment tree",
+        "segment-tree"
+      ],
+      "neighbor_code": "GOOD1",
+      "neighbor_title": "Good Array 1 ",
+      "neighbor_tags": [
+        "dp"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9648737907409668,
+      "keyword": 0.7318094059351141,
+      "lexical_jaccard": 0.640625,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "GOOD1",
+      "query_title": "Good Array 1 ",
+      "query_tags": [
+        "dp"
+      ],
+      "neighbor_code": "GOOD2",
+      "neighbor_title": "Good Array 2",
+      "neighbor_tags": [
+        "lazy-propagation",
+        "segment tree",
+        "segment-tree"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9648737907409668,
+      "keyword": 0.7318094059351141,
+      "lexical_jaccard": 0.640625,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "GOODSUB6",
+      "query_title": "Good Subarrays",
+      "query_tags": [
+        "dp"
+      ],
+      "neighbor_code": "GOOD2",
+      "neighbor_title": "Good Array 2",
+      "neighbor_tags": [
+        "lazy-propagation",
+        "segment tree",
+        "segment-tree"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9354987144470215,
+      "keyword": 0.29164817304460333,
+      "lexical_jaccard": 0.3389830508474576,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "MAX1XOR",
+      "query_title": "Max count of 1",
+      "query_tags": [
+        "string"
+      ],
+      "neighbor_code": "MAXONES",
+      "neighbor_title": "Maximize Ones",
+      "neighbor_tags": [
+        "ad hoc",
+        "case work",
+        "constructive",
+        "special"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9202877879142761,
+      "keyword": 0.32629261194745574,
+      "lexical_jaccard": 0.3442622950819672,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "MAXONES",
+      "query_title": "Maximize Ones",
+      "query_tags": [
+        "ad hoc",
+        "case work",
+        "constructive",
+        "special"
+      ],
+      "neighbor_code": "MAX1XOR",
+      "neighbor_title": "Max count of 1",
+      "neighbor_tags": [
+        "string"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9202877879142761,
+      "keyword": 0.32629261194745574,
+      "lexical_jaccard": 0.3442622950819672,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "COMPCLUB",
+      "query_title": "Company and Club Hierarchies",
+      "query_tags": [
+        "depth-first-search",
+        "dp"
+      ],
+      "neighbor_code": "SHDWCMP",
+      "neighbor_title": "Company Club Membership",
+      "neighbor_tags": [
+        "advanced data structures",
+        "advanced tree structures",
+        "dfs",
+        "graphs",
+        "segment trees",
+        "traversals",
+        "treap"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9159828424453735,
+      "keyword": 0.7879016154341787,
+      "lexical_jaccard": 0.3627450980392157,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "SHDWCMP",
+      "query_title": "Company Club Membership",
+      "query_tags": [
+        "advanced data structures",
+        "advanced tree structures",
+        "dfs",
+        "graphs",
+        "segment trees",
+        "traversals",
+        "treap"
+      ],
+      "neighbor_code": "COMPCLUB",
+      "neighbor_title": "Company and Club Hierarchies",
+      "neighbor_tags": [
+        "depth-first-search",
+        "dp"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9159828424453735,
+      "keyword": 0.7879016154341787,
+      "lexical_jaccard": 0.3627450980392157,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "LUCKY4",
+      "query_title": "Lucky Array",
+      "query_tags": [
+        "advanced algorithms",
+        "advanced dp",
+        "dp bitmask",
+        "memoization",
+        "recursion"
+      ],
+      "neighbor_code": "LUCKY5",
+      "neighbor_title": "Lucky Long",
+      "neighbor_tags": [
+        "ad hoc",
+        "constructive"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9119167923927307,
+      "keyword": 0.5432850222333768,
+      "lexical_jaccard": 0.3170731707317073,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "LUCKY5",
+      "query_title": "Lucky Long",
+      "query_tags": [
+        "ad hoc",
+        "constructive"
+      ],
+      "neighbor_code": "LUCKY4",
+      "neighbor_title": "Lucky Array",
+      "neighbor_tags": [
+        "advanced algorithms",
+        "advanced dp",
+        "dp bitmask",
+        "memoization",
+        "recursion"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9119167923927307,
+      "keyword": 0.5432850222333768,
+      "lexical_jaccard": 0.3170731707317073,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "UNSORTSORT",
+      "query_title": "Unsorted Sorting",
+      "query_tags": [
+        "dp",
+        "easy-medium"
+      ],
+      "neighbor_code": "ARRSORT",
+      "neighbor_title": "Array sorting",
+      "neighbor_tags": [
+        "gcd",
+        "number theory",
+        "observation"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9101850986480713,
+      "keyword": 0.20197106902414563,
+      "lexical_jaccard": 0.2987012987012987,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "ARRSORT",
+      "query_title": "Array sorting",
+      "query_tags": [
+        "gcd",
+        "number theory",
+        "observation"
+      ],
+      "neighbor_code": "UNSORTSORT",
+      "neighbor_title": "Unsorted Sorting",
+      "neighbor_tags": [
+        "dp",
+        "easy-medium"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9101850986480713,
+      "keyword": 0.20197106902414563,
+      "lexical_jaccard": 0.2987012987012987,
+      "kind": "shared wording, different concept"
+    },
+    {
+      "query_code": "ENDSORTED",
+      "query_title": "End Sorted",
+      "query_tags": [
+        "implementation"
+      ],
+      "neighbor_code": "ARRHALVES",
+      "neighbor_title": "Array Halves",
+      "neighbor_tags": [
+        "ad hoc",
+        "constructive"
+      ],
+      "shared_tags": [],
+      "semantic": 0.9086715579032898,
+      "keyword": 0.29340545922885686,
+      "lexical_jaccard": 0.3148148148148148,
+      "kind": "shared wording, different concept"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Semantic search over CodeChef problems. The index retrieves questions that share
 
 Problems come from CodeChef's public problem API (`/api/list/problems` and `/api/contests/{contest}/problems/{code}`), not from the 2016 Kaggle dump. That dump is mostly submitted source code. This task needs statements and topic tags.
 
-`src/download.py` keeps every rated problem (rating 1–5000; about 5,500 problems as of the download) in `data/raw/catalog.json`, then fetches a stratified sample of 1,400 problems spread across rating bands. Each record stores the statement, constraints, topic tags, difficulty, and a link. Tags are evaluation labels. They are not retrieval features.
+`src/download.py` keeps every rated problem (rating 1–5000; 5,552 problems in the catalog) in `data/raw/catalog.json`, then fetches a stratified sample of 1,400 problems spread across rating bands. 1,367 statements came back; cleaning kept 1,316. Each record stores the statement, topic tags, difficulty, and a link. Tags are evaluation labels. They are not retrieval features.
 
 Refresh the sample with:
 
@@ -32,7 +32,7 @@ Two indexes are built on the same cleaned text.
 
 **Keyword baseline.** TF-IDF unigrams and bigrams (`min_df=2`, `max_df=0.85`, sublinear tf, 25,000 features). This is the traditional search the task asks to beat. It matches shared words such as "array" and "chef", which show up in unrelated problems.
 
-**Semantic index.** [`sentence-transformers/all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), a 384-dimensional Sentence-BERT model. It was chosen over a full BERT encoder because it is trained for cosine similarity between sentences, runs on CPU for this collection size, and does not need fine-tuning on CodeChef. Vectors are L2-normalized, so inner product is cosine similarity.
+**Semantic index.** [`BAAI/bge-small-en-v1.5`](https://huggingface.co/BAAI/bge-small-en-v1.5), a 384-dimensional retrieval embedding. A first pass with `all-MiniLM-L6-v2` lost to TF-IDF: it matched the contest voice ("Chef has an array") more than the task. BGE-small is trained for passage retrieval and is still small enough to encode this collection on CPU. Corpus vectors are L2-normalized. A user query is prefixed with "Represent this sentence for searching relevant passages:", which is the prefix BGE was trained with. Problem-to-problem evaluation does not use that prefix, so both sides of a pair are encoded the same way.
 
 **Hybrid score.** `alpha * semantic + (1 - alpha) * keyword`. `alpha` is selected on a tuning split (see Evaluation). Keyword similarity still helps when the query uses a standard name ("Dijkstra", "segment tree") that the embedding underweights.
 
@@ -40,12 +40,14 @@ Similarity search is exact cosine over the collection. FAISS would matter past t
 
 ## Clustering
 
-K-means on the MiniLM vectors. `k` is chosen from {6, 8, …, 18} by silhouette score on a sample of the embeddings (Euclidean distance on normalized vectors ranks neighbors the same way cosine does).
+K-means runs on a 50-dimensional PCA of the embeddings. In the raw 384 dimensions every statement sits near every other statement, and silhouette stays near zero. `k` is chosen from {8, 10, …, 18} by how tightly a cluster concentrates a specific topic tag (tag purity), with silhouette as a tie-break.
 
 Each cluster is labeled automatically:
 
 1. Topic tags that cover at least 18% of the cluster (and at least 3 problems).
 2. If no tag is that common, the highest-weighted TF-IDF terms in the cluster centroid.
+
+Cluster names ignore tags that only mean "this is a programming problem" (`Algorithms`, `Mathematics`, `Data Structures`, and similar). The label is the specific tags that cover at least 12% of the cluster, otherwise the cluster's distinctive TF-IDF terms.
 
 PCA projects the embeddings to two dimensions for `artifacts/figures/clusters_pca.png`. The first two components are a map, not a claim that two axes explain the space. The explained-variance ratio is stored in `artifacts/meta.json`.
 
@@ -65,7 +67,13 @@ retriever.recommend(["FCTRL", "FLOW001"], k=8)
 
 Topic tags never enter the index. After aliasing obvious duplicates (`Graph Algos` → `graphs`, `Dynamic Programming` → `dp`), any tag attached to more than 15% of tagged problems is treated as generic and ignored. A retrieved problem is relevant when it shares at least one remaining tag with the query. The query itself is excluded.
 
-Only problems with at least three relevant neighbors are queries. Half tune `alpha` by AP@10. The other half is the reported comparison of keyword, semantic, and hybrid search: precision@10, recall@10, AP@10, nDCG@10, and MRR. Numbers are written to `reports/evaluation.md` by the pipeline.
+`Algorithms`, `Mathematics`, and `Data Structures` are always ignored. Any other tag on more than 20% of tagged problems is ignored too. Dynamic programming stays, because it is a technique rather than a container label. Only problems with at least three relevant neighbors are queries. Half tune `alpha` by AP@10. The other half is the reported comparison of keyword, semantic, and hybrid search: precision@5, precision@10, recall@10, AP@10, nDCG@10, and MRR. Recall@10 is small on purpose: a typical query has well over a hundred tagged cousins, and the metric only looks at ten results. Numbers are written to `reports/evaluation.md` by the pipeline.
+
+On the held-out half the hybrid index is the best of the three. With semantic weight 0.65 it reaches P@5 0.289, P@10 0.269, AP@10 0.162, nDCG@10 0.277, and MRR 0.464, ahead of TF-IDF alone (P@10 0.259, MRR 0.456) and ahead of embeddings alone (P@10 0.246, MRR 0.447). Embeddings do not replace keywords. They add the pairs keywords miss, which is why the mixture wins.
+
+Sixteen clusters fall out of the embeddings. Their automatic labels include dynamic programming, graphs and trees, bit manipulation, number theory, strings, game theory, and combinatorics. Silhouette is about 0.07. Statements still share a contest style, so the clusters overlap, but the labels are techniques rather than the word "Algorithms".
+
+The index also links problems whose wording barely overlaps. `DIVQUERY` (divisibility queries) sits near `PARPERM` (a partition problem) with token Jaccard 0.05 and a shared number-theory tag. `AMXOR` (XOR sum) sits near `XOR2` (consecutive XOR) on bit manipulation, Jaccard 0.09. The failure mode is the mirror image: `GOOD1` and `GOOD2`, or `LUCKY4` and `LUCKY5`, are nearest neighbors because the stories match, while their tag sets do not. Some of those "errors" are easy/hard twins with inconsistent tags. Others really are different tasks wearing the same nouns.
 
 This is a weak label, not a human judgment. Tag vocabulary is inconsistent, some real cousins share no tag, and some problems have no tags. Those cases are called out in the error slice rather than counted as successes.
 

@@ -1,0 +1,578 @@
+{
+  "0": {
+    "label": "Dynamic Programming, Graph Algos",
+    "size": 75,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 46
+      },
+      {
+        "tag": "Mathematics",
+        "count": 17
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 14
+      },
+      {
+        "tag": "Data Structures",
+        "count": 11
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 11
+      },
+      {
+        "tag": "Advanced Algorithms",
+        "count": 10
+      }
+    ],
+    "distinctive_terms": [
+      "cell",
+      "cells",
+      "grid",
+      "moves"
+    ]
+  },
+  "1": {
+    "label": "Dynamic Programming, ad-hoc, Arrays",
+    "size": 72,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 44
+      },
+      {
+        "tag": "Mathematics",
+        "count": 29
+      },
+      {
+        "tag": "Data Structures",
+        "count": 15
+      },
+      {
+        "tag": "Advanced Algorithms",
+        "count": 12
+      },
+      {
+        "tag": "Ad Hoc",
+        "count": 10
+      },
+      {
+        "tag": "Constructive",
+        "count": 10
+      }
+    ],
+    "distinctive_terms": [
+      "array",
+      "sequence",
+      "elements",
+      "number"
+    ]
+  },
+  "2": {
+    "label": "Dynamic Programming, ad-hoc, Number Theory",
+    "size": 67,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 49
+      },
+      {
+        "tag": "Mathematics",
+        "count": 27
+      },
+      {
+        "tag": "Observation",
+        "count": 21
+      },
+      {
+        "tag": "Constructive",
+        "count": 12
+      },
+      {
+        "tag": "Data Structures",
+        "count": 11
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 11
+      }
+    ],
+    "distinctive_terms": [
+      "contains",
+      "10",
+      "constraints",
+      "space"
+    ]
+  },
+  "3": {
+    "label": "ad-hoc",
+    "size": 79,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 34
+      },
+      {
+        "tag": "Mathematics",
+        "count": 30
+      },
+      {
+        "tag": "Basic Math",
+        "count": 16
+      },
+      {
+        "tag": "Data Structures",
+        "count": 13
+      },
+      {
+        "tag": "Ad Hoc",
+        "count": 10
+      },
+      {
+        "tag": "Constructive",
+        "count": 10
+      }
+    ],
+    "distinctive_terms": [
+      "rupees",
+      "wants",
+      "number",
+      "buy"
+    ]
+  },
+  "4": {
+    "label": "Implementation, Arrays, ad-hoc",
+    "size": 67,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 47
+      },
+      {
+        "tag": "Mathematics",
+        "count": 24
+      },
+      {
+        "tag": "Basic Math",
+        "count": 15
+      },
+      {
+        "tag": "Data Structures",
+        "count": 15
+      },
+      {
+        "tag": "Implementation",
+        "count": 14
+      },
+      {
+        "tag": "Constructive",
+        "count": 11
+      }
+    ],
+    "distinctive_terms": [
+      "contains",
+      "10",
+      "space",
+      "separated"
+    ]
+  },
+  "5": {
+    "label": "Dynamic Programming",
+    "size": 152,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 54
+      },
+      {
+        "tag": "Mathematics",
+        "count": 35
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 25
+      },
+      {
+        "tag": "dynamic-programming",
+        "count": 17
+      },
+      {
+        "tag": "Constructive",
+        "count": 16
+      },
+      {
+        "tag": "easy-medium",
+        "count": 16
+      }
+    ],
+    "distinctive_terms": [
+      "array",
+      "elements",
+      "a_i",
+      "length"
+    ]
+  },
+  "6": {
+    "label": "Combinatorics, Dynamic Programming",
+    "size": 58,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 27
+      },
+      {
+        "tag": "Mathematics",
+        "count": 17
+      },
+      {
+        "tag": "Constructive",
+        "count": 13
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 8
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 7
+      },
+      {
+        "tag": "Observation",
+        "count": 6
+      }
+    ],
+    "distinctive_terms": [
+      "permutation",
+      "permutations",
+      "p_i",
+      "array"
+    ]
+  },
+  "7": {
+    "label": "Dynamic Programming, Graph Algos",
+    "size": 101,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 39
+      },
+      {
+        "tag": "Mathematics",
+        "count": 27
+      },
+      {
+        "tag": "Data Structures",
+        "count": 17
+      },
+      {
+        "tag": "Advanced Algorithms",
+        "count": 13
+      },
+      {
+        "tag": "Basic Math",
+        "count": 12
+      },
+      {
+        "tag": "Basic Programming Concepts",
+        "count": 10
+      }
+    ],
+    "distinctive_terms": [
+      "people",
+      "number",
+      "time",
+      "person"
+    ]
+  },
+  "8": {
+    "label": "String, ad-hoc",
+    "size": 119,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 47
+      },
+      {
+        "tag": "Data Structures",
+        "count": 34
+      },
+      {
+        "tag": "String",
+        "count": 26
+      },
+      {
+        "tag": "Constructive",
+        "count": 21
+      },
+      {
+        "tag": "Ad Hoc",
+        "count": 19
+      },
+      {
+        "tag": "ad-hoc",
+        "count": 19
+      }
+    ],
+    "distinctive_terms": [
+      "string",
+      "strings",
+      "characters",
+      "length"
+    ]
+  },
+  "9": {
+    "label": "Bit Manipulation, Bitwise Operation",
+    "size": 44,
+    "top_tags": [
+      {
+        "tag": "Mathematics",
+        "count": 27
+      },
+      {
+        "tag": "Bit Manipulation",
+        "count": 26
+      },
+      {
+        "tag": "Bitwise Operation",
+        "count": 23
+      },
+      {
+        "tag": "Algorithms",
+        "count": 16
+      },
+      {
+        "tag": "Constructive",
+        "count": 7
+      },
+      {
+        "tag": "Data Structures",
+        "count": 5
+      }
+    ],
+    "distinctive_terms": [
+      "xor",
+      "bitwise",
+      "bitwise_operation",
+      "wiki bitwise_operation"
+    ]
+  },
+  "10": {
+    "label": "Graph Algos, Challenge Problem, Dynamic Programming",
+    "size": 56,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 29
+      },
+      {
+        "tag": "Mathematics",
+        "count": 18
+      },
+      {
+        "tag": "Advanced Algorithms",
+        "count": 14
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 11
+      },
+      {
+        "tag": "Data Structures",
+        "count": 9
+      },
+      {
+        "tag": "Challenge Problem",
+        "count": 8
+      }
+    ],
+    "distinctive_terms": [
+      "vertices",
+      "graph",
+      "edges",
+      "points"
+    ]
+  },
+  "11": {
+    "label": "Game Theory, Dynamic Programming",
+    "size": 94,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 56
+      },
+      {
+        "tag": "Mathematics",
+        "count": 22
+      },
+      {
+        "tag": "Game Theory",
+        "count": 21
+      },
+      {
+        "tag": "Data Structures",
+        "count": 13
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 13
+      },
+      {
+        "tag": "Constructive",
+        "count": 12
+      }
+    ],
+    "distinctive_terms": [
+      "game",
+      "player",
+      "players",
+      "alice"
+    ]
+  },
+  "12": {
+    "label": "Number Theory",
+    "size": 77,
+    "top_tags": [
+      {
+        "tag": "Mathematics",
+        "count": 45
+      },
+      {
+        "tag": "Algorithms",
+        "count": 33
+      },
+      {
+        "tag": "Number Theory",
+        "count": 17
+      },
+      {
+        "tag": "Constructive",
+        "count": 9
+      },
+      {
+        "tag": "Advanced Algorithms",
+        "count": 7
+      },
+      {
+        "tag": "Data Structures",
+        "count": 7
+      }
+    ],
+    "distinctive_terms": [
+      "numbers",
+      "sequence",
+      "matrix",
+      "positive"
+    ]
+  },
+  "13": {
+    "label": "Dynamic Programming, Combinatorics",
+    "size": 77,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 36
+      },
+      {
+        "tag": "Mathematics",
+        "count": 33
+      },
+      {
+        "tag": "Basic Math",
+        "count": 13
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 13
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 9
+      },
+      {
+        "tag": "Data Structures",
+        "count": 8
+      }
+    ],
+    "distinctive_terms": [
+      "rupees",
+      "buy",
+      "th",
+      "different"
+    ]
+  },
+  "14": {
+    "label": "Implementation, ad-hoc",
+    "size": 104,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 48
+      },
+      {
+        "tag": "Mathematics",
+        "count": 47
+      },
+      {
+        "tag": "Basic Math",
+        "count": 34
+      },
+      {
+        "tag": "Basic Programming Concepts",
+        "count": 14
+      },
+      {
+        "tag": "Ad Hoc",
+        "count": 11
+      },
+      {
+        "tag": "Constructive",
+        "count": 11
+      }
+    ],
+    "distinctive_terms": [
+      "time",
+      "chefland",
+      "day",
+      "minutes"
+    ]
+  },
+  "15": {
+    "label": "Graphs, Trees, Graph Algos",
+    "size": 74,
+    "top_tags": [
+      {
+        "tag": "Algorithms",
+        "count": 37
+      },
+      {
+        "tag": "Data Structures",
+        "count": 33
+      },
+      {
+        "tag": "Graphs",
+        "count": 30
+      },
+      {
+        "tag": "Trees",
+        "count": 29
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 24
+      },
+      {
+        "tag": "Advanced Algorithms",
+        "count": 19
+      }
+    ],
+    "distinctive_terms": [
+      "tree",
+      "node",
+      "nodes",
+      "vertices"
+    ]
+  }
+}

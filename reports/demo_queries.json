@@ -1,0 +1,576 @@
+[
+  {
+    "name": "Longest increasing subsequence",
+    "query": "Chef has a row of stones, each with a height. He wants the longest sequence of stones he can keep, from left to right, so that every kept stone is strictly taller than the one before it. Stones he discards disappear. How many stones can he keep?",
+    "hits": [
+      {
+        "code": "CHEFA",
+        "title": "Chef and easy problem",
+        "difficulty": 1408,
+        "tags": [],
+        "cluster": 3,
+        "cluster_label": "ad-hoc",
+        "score": 0.5528358153504241,
+        "semantic": 0.7569361925125122,
+        "keyword": 0.17379230885338465,
+        "link": "https://www.codechef.com/problems/CHEFA",
+        "preview": "Chef and easy problem Chef and Roma are playing a game. Rules of the game are quite simple. Initially there are  N  piles of stones on the table. In each turn, a player can choose one pile and remove it from the table. Each player want to maximize the total number of stones removed by him. Chef takes the first turn.   "
+      },
+      {
+        "code": "MMP",
+        "title": "Min-Max Path",
+        "difficulty": 2936,
+        "tags": [
+          "DP Approach",
+          "Memoization",
+          "Algorithms",
+          "Dynamic Programming",
+          "Recursion"
+        ],
+        "cluster": 0,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.5335141986271711,
+        "semantic": 0.7138656377792358,
+        "keyword": 0.19857584569027653,
+        "link": "https://www.codechef.com/problems/MMP",
+        "preview": "Min-Max Path There are N stones numbered 1 through N. Each stone has a value written on it; for each valid i, the value on stone i is V_i.  You are initially on the first stone and your goal is to jump to stone N by perfoming a valid sequence of jumps. Formally, let's denote a sequence of visited stones during these ju"
+      },
+      {
+        "code": "SEQLCS",
+        "title": "Chef and the Number Sequence",
+        "difficulty": 3031,
+        "tags": [
+          "DP Bitmask",
+          "Longest Common Subsequence",
+          "Advanced Algorithms",
+          "Advanced DP",
+          "Algorithms",
+          "Dynamic Programming",
+          "DP on sequences"
+        ],
+        "cluster": 1,
+        "cluster_label": "Dynamic Programming, ad-hoc, Arrays",
+        "score": 0.5277524172466549,
+        "semantic": 0.7724019289016724,
+        "keyword": 0.07340334120294938,
+        "link": "https://www.codechef.com/problems/SEQLCS",
+        "preview": "Chef and the Number Sequence Chef has a sequence  A  consisting of  N  integers each lying between  1  and  K , both inclusive. Now he wants to construct another sequence  B  of the same length also containing integers between  1  and  K  (again, both inclusive). Find out in how many ways he can construct the sequence "
+      },
+      {
+        "code": "PSTONES",
+        "title": "Precious Stones ",
+        "difficulty": 2775,
+        "tags": [
+          "dp-on-trees",
+          "dynamic-programming",
+          "walsh-hadamard",
+          "Dynamic Programming"
+        ],
+        "cluster": 14,
+        "cluster_label": "Implementation, ad-hoc",
+        "score": 0.5216882623714497,
+        "semantic": 0.7132972478866577,
+        "keyword": 0.16584305464718757,
+        "link": "https://www.codechef.com/problems/PSTONES",
+        "preview": "Precious Stones Chefland consists of N villages connected by N-1 roads in such a way that the road network is a tree, i.e. there are no cycles and each village is reachable from any other village. A well known legend says that in the middle of each road, there is a hidden precious stone. There are K different colours o"
+      },
+      {
+        "code": "STNGAME",
+        "title": "Stone Game",
+        "difficulty": 2060,
+        "tags": [
+          "String",
+          "Greedy",
+          "Game Theory",
+          "Data Structures",
+          "Algorithms"
+        ],
+        "cluster": 11,
+        "cluster_label": "Game Theory, Dynamic Programming",
+        "score": 0.5024898986055419,
+        "semantic": 0.6705735325813293,
+        "keyword": 0.19033458687974303,
+        "link": "https://www.codechef.com/problems/STNGAME",
+        "preview": "Stone Game Initially, Alice and Bob both have a bag of N stones each with every stone having a **lowercase alphabet** written on it. Both players know the stones of the other player.   Alice and Bob want to create a string S of length 2 N using the stones they have. They play a game to create the string. The rules of t"
+      }
+    ]
+  },
+  {
+    "name": "Shortest path with a disguise",
+    "query": "A courier must travel between cities. Each road has a travel time. Find the smallest total time to go from the capital to every other city. Roads are one-way.",
+    "hits": [
+      {
+        "code": "TWOROADS",
+        "title": "Two Roads",
+        "difficulty": 2860,
+        "tags": [
+          "Geometry",
+          "Implementation",
+          "Mathematics",
+          "Algorithms"
+        ],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.5422789549202602,
+        "semantic": 0.698624312877655,
+        "keyword": 0.25192331568708926,
+        "link": "https://www.codechef.com/problems/TWOROADS",
+        "preview": "Two Roads Byteland is notorious for its poor transportation system. There are  N  villages located far away from each other. So the only way of going from one village to another is using the narrow pathways. But now it's time to make some changes. People in Byteland are going to improve the transportation system in the"
+      },
+      {
+        "code": "SLMNTRV",
+        "title": "Salesman Travels",
+        "difficulty": 1668,
+        "tags": [],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.5220682741232056,
+        "semantic": 0.7227275371551514,
+        "keyword": 0.14941542518347167,
+        "link": "https://www.codechef.com/problems/SLMNTRV",
+        "preview": "Salesman Travels *As always, Hyder seeks Order in Chaos. The cities are currently in complete chaos, and Hyder wants to bring some order to them by arranging them in a suitable route.*  There are N cities numbered from 1 to N. Hyder wants to visit every city exactly once, in some order. Let this order be represented by"
+      },
+      {
+        "code": "BRLADDER",
+        "title": "Bear and Ladder",
+        "difficulty": 999,
+        "tags": [
+          "Conditional Statements",
+          "Implementation",
+          "Basic Programming Concepts",
+          "Algorithms"
+        ],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.517985337926095,
+        "semantic": 0.6847617030143738,
+        "keyword": 0.20825784533689495,
+        "link": "https://www.codechef.com/problems/BRLADDER",
+        "preview": "Bear and Ladder Bearland has infinitely many cities, numbered starting from 1. Some pairs of cities are connected with bidirectional roads:  There are roads 1-2, 3-4, 5-6, 7-8, and so on (there is a road between cities 2*i+1 and 2*i+2 for every non-negative integer i).  There are roads 1-3, 3-5, 5-7, 7-9, ... (between "
+      },
+      {
+        "code": "UNRCOST",
+        "title": "Unreachability Cost",
+        "difficulty": 2753,
+        "tags": [
+          "Strongly Connected Components",
+          "Binary Search",
+          "Prefix Sum",
+          "Algorithms",
+          "Graph Algos",
+          "Searching",
+          "Simple Algos"
+        ],
+        "cluster": 14,
+        "cluster_label": "Implementation, ad-hoc",
+        "score": 0.514558474783971,
+        "semantic": 0.6992436051368713,
+        "keyword": 0.1715718296734325,
+        "link": "https://www.codechef.com/problems/UNRCOST",
+        "preview": "Unreachability Cost The country of Chefland has N cities and M **unidirectional** roads between these cities.  You plan to visit Chefland as a tourist, but you haven't yet decided which cities to visit or what your budget will be.  However, you do know that you'd like to use the roads as much as possible.  Let's call a"
+      },
+      {
+        "code": "CROADS",
+        "title": "Roads in Chefland",
+        "difficulty": 2136,
+        "tags": [
+          "Bitwise Operation",
+          "Arithmetic",
+          "ad-hoc",
+          "Observation",
+          "Mathematics",
+          "Bit Manipulation",
+          "Basic Math",
+          "Algorithms",
+          "Constructive",
+          "Ad Hoc"
+        ],
+        "cluster": 14,
+        "cluster_label": "Implementation, ad-hoc",
+        "score": 0.5100072292678874,
+        "semantic": 0.687809944152832,
+        "keyword": 0.17980225545829862,
+        "link": "https://www.codechef.com/problems/CROADS",
+        "preview": "Roads in Chefland In Chefland, there are N cities (numbered 1 through N). Initially, there are no roads between them. The Mayor of Chefland has ordered engineers to build roads across Chefland in such a way that each city is reachable from all other cities.  For each pair of distinct cities i and j, the cost of buildin"
+      }
+    ]
+  },
+  {
+    "name": "Binary search on the answer",
+    "query": "You may place at most K painters. A painter who works for T minutes can paint any set of fence segments whose lengths sum to at most T, and the segments assigned to one painter must be contiguous. What is the minimum T that finishes the fence?",
+    "hits": [
+      {
+        "code": "PCJ18F",
+        "title": "Chef and Fencing",
+        "difficulty": 3162,
+        "tags": [
+          "Geometry",
+          "Trigonometry",
+          "Mathematics",
+          "Basic Math"
+        ],
+        "cluster": 10,
+        "cluster_label": "Graph Algos, Challenge Problem, Dynamic Programming",
+        "score": 0.5170341414819416,
+        "semantic": 0.696399450302124,
+        "keyword": 0.18392715641721563,
+        "link": "https://www.codechef.com/problems/PCJ18F",
+        "preview": "Chef and Fencing Today, Chef has a fencing job at hand and has to fence up a surface covering N points.   To minimize his work, he started looking for an algorithm that had him fence the least amount of length.   He came up with the Convex Hull algorithm, but soon realized it gave him some random shape to fence. Howeve"
+      },
+      {
+        "code": "EFFPAINT",
+        "title": "Efficient Painting",
+        "difficulty": 3519,
+        "tags": [
+          "Challenge Problem"
+        ],
+        "cluster": 3,
+        "cluster_label": "ad-hoc",
+        "score": 0.4801280410630966,
+        "semantic": 0.6845816373825073,
+        "keyword": 0.10042852207123228,
+        "link": "https://www.codechef.com/problems/EFFPAINT",
+        "preview": "Efficient Painting Chef recently took up painting. He likes painting pictures, but is always thinking of ways to make painting more efficient. Chef begins with a square canvas, initially painted completely white. He paints one rectangle at a time, where every edge must have integer length, and 2 edges of the rectangle "
+      },
+      {
+        "code": "CHANOQ",
+        "title": "Chef and odd queries",
+        "difficulty": 2573,
+        "tags": [
+          "Persistent Segment Trees",
+          "Square Root Decomposition",
+          "Advanced Data Structures",
+          "Persistent Structures",
+          "Advanced Algorithms"
+        ],
+        "cluster": 4,
+        "cluster_label": "Implementation, Arrays, ad-hoc",
+        "score": 0.45286303384387505,
+        "semantic": 0.6298253536224365,
+        "keyword": 0.12421879380328354,
+        "link": "https://www.codechef.com/problems/CHANOQ",
+        "preview": "Chef and odd queries Chef has  N  segments. For each  i  (1 \u2264  i  \u2264  N ), the  i -th segment starts at point  L i  and ends at point  R i  (let's denote it by [ L i ,\u2009\u2009 R i ]).  Let's say that a segment [ l ,\u2009 r ] crosses a point  x  if  l \u2009\u2264\u2009 x \u2009\u2264\u2009 r .  Chef wants you to answer  Q  queries. In each query, you are give"
+      },
+      {
+        "code": "EMBED",
+        "title": "Embedding",
+        "difficulty": 3675,
+        "tags": [
+          "Challenge Problem"
+        ],
+        "cluster": 10,
+        "cluster_label": "Graph Algos, Challenge Problem, Dynamic Programming",
+        "score": 0.4478660004953198,
+        "semantic": 0.6482791900634766,
+        "keyword": 0.07567016216109278,
+        "link": "https://www.codechef.com/problems/EMBED",
+        "preview": "Embedding You have  N  points, numbered from  1  to  N . You have to position these  N  points on the Cartesian plane.  You have to decide the coordinates of the points. But there are some restrictions. Firstly, the coordinates should be integers, at least  1  and at most  4000 , thus you can put a point only on a latt"
+      },
+      {
+        "code": "TREERGB",
+        "title": "Paint the Tree",
+        "difficulty": 3519,
+        "tags": [
+          "DP on Trees",
+          "Advanced Algorithms",
+          "Advanced DP"
+        ],
+        "cluster": 15,
+        "cluster_label": "Graphs, Trees, Graph Algos",
+        "score": 0.44752252550198346,
+        "semantic": 0.6471636295318604,
+        "keyword": 0.07676049219068207,
+        "link": "https://www.codechef.com/problems/TREERGB",
+        "preview": "Paint the Tree You are given a rooted tree with  N  nodes. You would like to paint each node of the tree in one of three possible colors: red, green, and blue. The following conditions must be fulfilled:  For each node painted red, there must be no more than  R  red nodes in its subtree (including this node).  For each"
+      }
+    ]
+  },
+  {
+    "name": "Range sum queries",
+    "query": "An array starts with N integers. You must answer two kinds of operations: add a value to every element from index L to R, and report the sum of elements from L to R. There are many operations.",
+    "hits": [
+      {
+        "code": "TWOCLOSE",
+        "title": "Not-too-far Replacement",
+        "difficulty": 1336,
+        "tags": [],
+        "cluster": 5,
+        "cluster_label": "Dynamic Programming",
+        "score": 0.5664513015557551,
+        "semantic": 0.7581681609153748,
+        "keyword": 0.21040573114702343,
+        "link": "https://www.codechef.com/problems/TWOCLOSE",
+        "preview": "Not-too-far Replacement You are given an array A of length N+1, denoted [A_1, A_2, , A_{N+1}].  You can perform the following operation on the array A: - Choose an index i (1 i N) such that A_i 2 A_{N+1}.  Then, swap the values of A_i and A_{N+1}.  That is, you can swap the element at index N+1 with some element of the"
+      },
+      {
+        "code": "FUNAGP",
+        "title": "Fun with AGp",
+        "difficulty": 2632,
+        "tags": [
+          "Segment Trees",
+          "Fenwick Trees",
+          "Number Theory",
+          "Modulo Multiplicative Inverse",
+          "Advanced Data Structures",
+          "Advanced Tree Structures",
+          "Mathematics",
+          "Modular Arithmetic"
+        ],
+        "cluster": 5,
+        "cluster_label": "Dynamic Programming",
+        "score": 0.5581555110708771,
+        "semantic": 0.7363563179969788,
+        "keyword": 0.22721121495561877,
+        "link": "https://www.codechef.com/problems/FUNAGP",
+        "preview": "Fun with AGp You are given an 1-based array  A  and its fixed parameters:  R ,  p 1 ,  p 2 . You need to mantain this array, performing some operations. The operations are as follows:  0  S D X Y  Add an  AGP  with the start term of  S , the common difference of  D , common ratio of  R  from the  X -th to the to  Y -th"
+      },
+      {
+        "code": "CONSTRRAY",
+        "title": "Construct Array",
+        "difficulty": 1624,
+        "tags": [
+          "Constructive",
+          "Algorithms"
+        ],
+        "cluster": 5,
+        "cluster_label": "Dynamic Programming",
+        "score": 0.5543270835458409,
+        "semantic": 0.7899549007415771,
+        "keyword": 0.11673266807600742,
+        "link": "https://www.codechef.com/problems/CONSTRRAY",
+        "preview": "Construct Array You are given a positive integer N.   Consider an array A of length N. Let P_i denote the sum of the first i elements of A and S_i denote the sum of the last i elements of A.  You need to construct the array A of size N such that all of the following conditions are met: - -10^9 A_i 10^9, for all (1 i N)"
+      },
+      {
+        "code": "SUMARRAY",
+        "title": "Array Sum",
+        "difficulty": 2077,
+        "tags": [
+          "Constructive",
+          "Algorithms"
+        ],
+        "cluster": 5,
+        "cluster_label": "Dynamic Programming",
+        "score": 0.5488775168525473,
+        "semantic": 0.7796338796615601,
+        "keyword": 0.12032996889162509,
+        "link": "https://www.codechef.com/problems/SUMARRAY",
+        "preview": "Array Sum You are given an **even** integer N and an integer K.  Generate an array A of size N such that: - 1 A_i 10^5 for all 1 i N; - The number of **odd** elements in the array is same as the number of **even** elements. - The sum of all elements of the array is K.  If multiple such arrays exist, print any. If no su"
+      },
+      {
+        "code": "SUBSEQI",
+        "title": "Subtraction Sequence I",
+        "difficulty": 2640,
+        "tags": [
+          "Lazy Propagation",
+          "Observation",
+          "Advanced Data Structures",
+          "Advanced Tree Structures",
+          "Segment Trees",
+          "Algorithms"
+        ],
+        "cluster": 5,
+        "cluster_label": "Dynamic Programming",
+        "score": 0.5430121527716915,
+        "semantic": 0.754903256893158,
+        "keyword": 0.1495001448351429,
+        "link": "https://www.codechef.com/problems/SUBSEQI",
+        "preview": "Subtraction Sequence I Consider an array B of size M.   We must perform the following operations with parameter i = M-1, M-2, , 1 (in this order):  *Note that the order of operations is different than SUBSEQII*.  - Choose an index j such that i j M;  - Replace B_j in the array with (0, B_j - B_i).  Note that the subseq"
+      }
+    ]
+  },
+  {
+    "name": "Modular exponentiation",
+    "query": "Given integers A, B and a prime modulus M, compute A raised to the power B modulo M. B can be as large as 10^18, so multiplying A by itself B times is too slow.",
+    "hits": [
+      {
+        "code": "SEQTOWER",
+        "title": "Adding Up Sequences of Towers",
+        "difficulty": 3173,
+        "tags": [
+          "medium-hard",
+          "Medium Hard"
+        ],
+        "cluster": 12,
+        "cluster_label": "Number Theory",
+        "score": 0.5377728930442363,
+        "semantic": 0.7367252707481384,
+        "keyword": 0.16828996548449135,
+        "link": "https://www.codechef.com/problems/SEQTOWER",
+        "preview": "Adding Up Sequences of Towers You are given an array  A  consisting of prime numbers greater than 4.  Fun( Sequence S ) {   if ( S has only 1 element ) return A[S[1]]   X = S[2...last element]   return power( A[S[1]] , Fun(X) )  }  where  power(A, B)  returns  A B , and  A  is  1 -indexed.  Fun(S) :  Now you need to fi"
+      },
+      {
+        "code": "A4",
+        "title": "The Rise and Fall of Power",
+        "difficulty": 2078,
+        "tags": [
+          "Arbitrary Precision",
+          "Basic Math",
+          "Mathematics"
+        ],
+        "cluster": 12,
+        "cluster_label": "Number Theory",
+        "score": 0.5237321964762511,
+        "semantic": 0.7355734705924988,
+        "keyword": 0.13031272997796617,
+        "link": "https://www.codechef.com/problems/A4",
+        "preview": "The Rise and Fall of Power Johnny was asked by his math teacher to compute  n n  ( n  to the power of  n , where  n  is an integer), and has to read his answer out loud. This is a bit of a tiring task, since the result is probably an extremely large number, and would certainly keep Johnny occupied for a while if he wer"
+      },
+      {
+        "code": "SUMDIV2",
+        "title": "Find an integer",
+        "difficulty": 1714,
+        "tags": [
+          "Mathematics"
+        ],
+        "cluster": 12,
+        "cluster_label": "Number Theory",
+        "score": 0.5216173658120117,
+        "semantic": 0.7145767211914062,
+        "keyword": 0.16326431131007604,
+        "link": "https://www.codechef.com/problems/SUMDIV2",
+        "preview": "Find an integer Chef has two nephews who love integers X and Y. An integer N is *awesome* if the following conditions hold: - 1 N 10^{18} - (N+Y) is divisible by X. - (N+X) is divisible by Y.  Find **any** awesome integer N. We can prove that under the given constraints, an answer always exists.  Note that you do **not"
+      },
+      {
+        "code": "ICL1706",
+        "title": "Shubham Loves Maths",
+        "difficulty": 3125,
+        "tags": [
+          "arithmetic-progression",
+          "Arithmetic Progression"
+        ],
+        "cluster": 12,
+        "cluster_label": "Number Theory",
+        "score": 0.5080593967803101,
+        "semantic": 0.7313552498817444,
+        "keyword": 0.09336714073810692,
+        "link": "https://www.codechef.com/problems/ICL1706",
+        "preview": "Shubham Loves Maths Our friend Shubham loved solving maths problems. Today he came accross this function which is used to calculate the  strength of a number   int strength(int N) {  int value = 0, temp = N;  /*Array lp stores the lowest prime divisor   i.e. lp[x] stores lowest prime divisor of x*/  while(temp != 1) { "
+      },
+      {
+        "code": "KBIGNUMB",
+        "title": "Eugene and big number",
+        "difficulty": 2203,
+        "tags": [
+          "Basic Math",
+          "Modular Exponentiation",
+          "Mathematics",
+          "Modular Arithmetic"
+        ],
+        "cluster": 12,
+        "cluster_label": "Number Theory",
+        "score": 0.5046063559467246,
+        "semantic": 0.7529566287994385,
+        "keyword": 0.04338448876842145,
+        "link": "https://www.codechef.com/problems/KBIGNUMB",
+        "preview": "Eugene and big number Eugene has to do his homework. But today, he is feeling very lazy and wants to you do his homework. His homework has the following given maths problem.  You are given three integers:  A ,  N ,  M . You write the number  A  appended to itself  N  times in a row. Let's call the resulting big number "
+      }
+    ]
+  },
+  {
+    "name": "Connected components",
+    "query": "There are N villages and M bidirectional roads. Two villages are in the same kingdom when you can walk between them using roads. How many kingdoms are there?",
+    "hits": [
+      {
+        "code": "MSTONES",
+        "title": "Milestones",
+        "difficulty": 2078,
+        "tags": [
+          "Randomized Algorithms",
+          "Computational Geometry",
+          "Pigeonhole Principle",
+          "Advanced Algorithms",
+          "Mathematics",
+          "Set Theory"
+        ],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.566847045365014,
+        "semantic": 0.7492133975028992,
+        "keyword": 0.22816671968368757,
+        "link": "https://www.codechef.com/problems/MSTONES",
+        "preview": "Milestones Once upon a time, there was a Kingdom of Seven Roads. Besides a fancy name, it actually had exactly 7 straight roads. Its residents wanted to keep track of the distances they traveled so they placed milestones along some roads. The roads slowly deteriorated and disappeared but some milestones remained. Arche"
+      },
+      {
+        "code": "BRLADDER",
+        "title": "Bear and Ladder",
+        "difficulty": 999,
+        "tags": [
+          "Conditional Statements",
+          "Implementation",
+          "Basic Programming Concepts",
+          "Algorithms"
+        ],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.557562699701499,
+        "semantic": 0.7413266897201538,
+        "keyword": 0.21628675229807978,
+        "link": "https://www.codechef.com/problems/BRLADDER",
+        "preview": "Bear and Ladder Bearland has infinitely many cities, numbered starting from 1. Some pairs of cities are connected with bidirectional roads:  There are roads 1-2, 3-4, 5-6, 7-8, and so on (there is a road between cities 2*i+1 and 2*i+2 for every non-negative integer i).  There are roads 1-3, 3-5, 5-7, 7-9, ... (between "
+      },
+      {
+        "code": "TWOROADS",
+        "title": "Two Roads",
+        "difficulty": 2860,
+        "tags": [
+          "Geometry",
+          "Implementation",
+          "Mathematics",
+          "Algorithms"
+        ],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.5299824753267875,
+        "semantic": 0.7202554941177368,
+        "keyword": 0.17661834866186316,
+        "link": "https://www.codechef.com/problems/TWOROADS",
+        "preview": "Two Roads Byteland is notorious for its poor transportation system. There are  N  villages located far away from each other. So the only way of going from one village to another is using the narrow pathways. But now it's time to make some changes. People in Byteland are going to improve the transportation system in the"
+      },
+      {
+        "code": "CLERVT",
+        "title": "The Kingdom of Ererraveth",
+        "difficulty": 2944,
+        "tags": [
+          "Trees",
+          "DP Bitmask",
+          "Bitmasking",
+          "Euler Tour",
+          "Data Structures",
+          "Graphs",
+          "Advanced Algorithms",
+          "Advanced DP",
+          "Mathematics",
+          "Bit Manipulation",
+          "Algorithms",
+          "Graph Algos",
+          "Traversals"
+        ],
+        "cluster": 7,
+        "cluster_label": "Dynamic Programming, Graph Algos",
+        "score": 0.5048061447706561,
+        "semantic": 0.7083805799484253,
+        "keyword": 0.1267393536132691,
+        "link": "https://www.codechef.com/problems/CLERVT",
+        "preview": "The Kingdom of Ererraveth The kingdom of Ererraveth has N cities and N - 1 roads. A single road connects 2 cities. From any city it is possible to reach all other cities via the roads. It can be deduced that there is a unique path between any 2 cities. Each city is labeled with a unique number 1 to N. The city where th"
+      },
+      {
+        "code": "PSTONES",
+        "title": "Precious Stones ",
+        "difficulty": 2775,
+        "tags": [
+          "dp-on-trees",
+          "dynamic-programming",
+          "walsh-hadamard",
+          "Dynamic Programming"
+        ],
+        "cluster": 14,
+        "cluster_label": "Implementation, ad-hoc",
+        "score": 0.49673572331469334,
+        "semantic": 0.6708660125732422,
+        "keyword": 0.17335091743585823,
+        "link": "https://www.codechef.com/problems/PSTONES",
+        "preview": "Precious Stones Chefland consists of N villages connected by N-1 roads in such a way that the road network is a tree, i.e. there are no cycles and each village is reachable from any other village. A well known legend says that in the middle of each road, there is a hidden precious stone. There are K different colours o"
+      }
+    ]
+  }
+]

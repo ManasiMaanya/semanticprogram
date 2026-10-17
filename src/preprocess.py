@@ -97,22 +97,28 @@ def collect_tags(row: dict) -> list[str]:
     return cleaned
 
 
+def narrative_text(text: str) -> str:
+    """Drop input/output templates. They are shared by unrelated problems and drown out the task."""
+    parts = re.split(
+        r"\n\s*(?:input(?: format)?|output(?: format)?|constraints|sample input|sample output|subtasks?|explanation)\s*:?\s*\n",
+        text,
+        maxsplit=1,
+        flags=re.IGNORECASE,
+    )
+    return parts[0].strip()
+
+
 def build_document(row: dict) -> str:
     statement = html_to_text(row.get("statement") or "")
     body = html_to_text(row.get("body") or "")
     # The structured statement is the problem. Fall back to the HTML body when
     # the contest still stores the statement only in `body`.
     narrative = statement if len(statement) >= 40 else body
-    parts = [
-        row.get("title") or "",
-        narrative,
-        html_to_text(row.get("input_format") or ""),
-        html_to_text(row.get("output_format") or ""),
-        html_to_text(row.get("constraints") or ""),
-    ]
-    document = "\n".join(part for part in parts if part)
+    narrative = narrative_text(narrative)
+    title = (row.get("title") or "").strip()
+    document = f"{title}\n{narrative}".strip() if narrative else title
     document = re.sub(r"\n{3,}", "\n\n", document).strip()
-    return document[:6000]
+    return document[:4000]
 
 
 def is_usable(document: str) -> bool:

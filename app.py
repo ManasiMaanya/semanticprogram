@@ -36,7 +36,7 @@ def main() -> None:
     st.title("Déjà Code")
     st.write(
         "Find CodeChef problems that share an algorithm or data structure, even when the story is different. "
-        "Search mixes MiniLM sentence embeddings with TF-IDF. Topic tags are labels, not search features."
+        "Search mixes BGE sentence embeddings with TF-IDF. Topic tags are labels, not search features."
     )
     if not (ART / "embeddings.npy").exists():
         st.error("Index not built yet. Run `python -m src.pipeline` first.")
@@ -78,12 +78,12 @@ def main() -> None:
         members = retriever.frame[retriever.frame["cluster"] == int(cluster_id)].sort_values("difficulty")
         st.dataframe(
             members[["code", "title", "difficulty", "tag_text", "link"]].head(30),
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
         figure = ART / "figures" / "clusters_pca.png"
         if figure.exists():
-            st.image(str(figure), caption="PCA of MiniLM embeddings")
+            st.image(str(figure), caption="PCA of BGE embeddings")
 
     with tab_recommend:
         raw = st.text_input("Solved problem codes", placeholder="FCTRL, HS08TEST, FLOW001")

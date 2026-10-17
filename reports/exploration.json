@@ -1,0 +1,94 @@
+{
+  "downloaded": 1367,
+  "kept_after_cleaning": 1316,
+  "dropped": 51,
+  "with_concept_tags": 1093,
+  "without_concept_tags": 223,
+  "difficulty_min": 253,
+  "difficulty_median": 2115.0,
+  "difficulty_max": 4076,
+  "median_words": 153.5,
+  "top_tags": [
+    {
+      "tag": "Algorithms",
+      "count": 642
+    },
+    {
+      "tag": "Mathematics",
+      "count": 426
+    },
+    {
+      "tag": "Data Structures",
+      "count": 215
+    },
+    {
+      "tag": "Dynamic Programming",
+      "count": 166
+    },
+    {
+      "tag": "Constructive",
+      "count": 158
+    },
+    {
+      "tag": "Basic Math",
+      "count": 143
+    },
+    {
+      "tag": "Advanced Algorithms",
+      "count": 127
+    },
+    {
+      "tag": "ad-hoc",
+      "count": 123
+    },
+    {
+      "tag": "Ad Hoc",
+      "count": 123
+    },
+    {
+      "tag": "Observation",
+      "count": 118
+    },
+    {
+      "tag": "Advanced Data Structures",
+      "count": 92
+    },
+    {
+      "tag": "Implementation",
+      "count": 86
+    },
+    {
+      "tag": "Graph Algos",
+      "count": 85
+    },
+    {
+      "tag": "Bit Manipulation",
+      "count": 79
+    },
+    {
+      "tag": "Graphs",
+      "count": 70
+    },
+    {
+      "tag": "Number Theory",
+      "count": 70
+    },
+    {
+      "tag": "Advanced Tree Structures",
+      "count": 69
+    },
+    {
+      "tag": "Greedy",
+      "count": 69
+    },
+    {
+      "tag": "Arrays",
+      "count": 65
+    },
+    {
+      "tag": "Bitwise Operation",
+      "count": 63
+    }
+  ],
+  "processed_path": "C:\\Users\\manas\\ccaiml\\data\\processed\\problems.jsonl"
+}

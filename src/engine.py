@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS, TfidfVectorizer
 from sklearn.metrics import silhouette_score
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import normalize
@@ -18,7 +18,24 @@ from sklearn.preprocessing import normalize
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed" / "problems.jsonl"
 ART = ROOT / "artifacts"
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_NAME = "BAAI/bge-small-en-v1.5"
+QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
+# Tags that describe "a programming problem" rather than a technique.
+GENERIC_TAGS = {
+    "algorithms",
+    "mathematics",
+    "math",
+    "basic math",
+    "simple math",
+    "data structures",
+    "basic programming concepts",
+    "observation",
+    "ad hoc",
+    "constructive",
+    "advanced algorithms",
+    "advanced data structures",
+    "brute force",
+}
 
 
 def load_processed(path: Path = PROCESSED) -> pd.DataFrame:
@@ -33,11 +50,33 @@ def load_processed(path: Path = PROCESSED) -> pd.DataFrame:
 
 
 def fit_tfidf(texts: list[str]) -> TfidfVectorizer:
-    # Sublinear TF and bigrams catch phrases like "binary search" without
-    # letting long stories dominate the vector.
+    # Sublinear TF and bigrams catch phrases like "binary search". Contest
+    # boilerplate ("chef", "test case") is stopped so it cannot rank a hit.
+    stops = list(
+        ENGLISH_STOP_WORDS.union(
+            {
+                "chef",
+                "chefs",
+                "codechef",
+                "test",
+                "case",
+                "cases",
+                "integer",
+                "integers",
+                "line",
+                "lines",
+                "input",
+                "output",
+                "print",
+                "single",
+                "given",
+                "task",
+            }
+        )
+    )
     vectorizer = TfidfVectorizer(
         lowercase=True,
-        stop_words="english",
+        stop_words=stops,
         ngram_range=(1, 2),
         min_df=2,
         max_df=0.85,
@@ -76,18 +115,48 @@ def re_tokens(text: str) -> list[str]:
     return re.findall(r"[a-z]{3,}", text.lower())
 
 
-def choose_k(embeddings: np.ndarray, random_state: int = 17) -> tuple[int, float]:
-    sample = embeddings
-    if len(embeddings) > 800:
-        rng = np.random.default_rng(random_state)
-        sample = embeddings[rng.choice(len(embeddings), 800, replace=False)]
-    best_k, best_score = 8, -1.0
-    for k in range(6, 19, 2):
-        labels = KMeans(n_clusters=k, n_init=10, random_state=random_state).fit_predict(sample)
-        score = float(silhouette_score(sample, labels, metric="euclidean"))
-        if score > best_score:
-            best_k, best_score = k, score
-    return best_k, best_score
+def specific_tag_sets(frame: pd.DataFrame) -> list[set[str]]:
+    sets = []
+    for tags in frame["tags"]:
+        sets.append({tag.lower() for tag in tags if tag.lower() not in GENERIC_TAGS})
+    return sets
+
+
+def tag_purity(labels: np.ndarray, tag_sets: list[set[str]]) -> float:
+    scores = []
+    for cluster_id in set(labels.tolist()):
+        members = [tag_sets[i] for i, label in enumerate(labels) if label == cluster_id and tag_sets[i]]
+        if len(members) < 5:
+            continue
+        counts: dict[str, int] = {}
+        for tags in members:
+            for tag in tags:
+                counts[tag] = counts.get(tag, 0) + 1
+        if not counts:
+            continue
+        scores.append(max(counts.values()) / len(members))
+    return float(np.mean(scores)) if scores else 0.0
+
+
+def choose_k(embeddings: np.ndarray, tag_sets: list[set[str]], random_state: int = 17) -> tuple[int, dict]:
+    """Pick k by concept purity, and keep the silhouette of that choice.
+
+    Silhouette on these embeddings stays low because every statement shares a
+    contest style. Purity asks whether a cluster concentrates a real topic tag.
+    """
+    best: dict | None = None
+    for k in range(8, 19, 2):
+        labels = KMeans(n_clusters=k, n_init=10, random_state=random_state).fit_predict(embeddings)
+        sample_index = np.arange(len(embeddings))
+        if len(embeddings) > 800:
+            sample_index = np.random.default_rng(random_state).choice(len(embeddings), 800, replace=False)
+        silhouette = float(silhouette_score(embeddings[sample_index], labels[sample_index], metric="euclidean"))
+        purity = tag_purity(labels, tag_sets)
+        row = {"k": k, "silhouette": silhouette, "tag_purity": purity, "labels": labels}
+        if best is None or (purity, silhouette) > (best["tag_purity"], best["silhouette"]):
+            best = row
+    assert best is not None
+    return int(best["k"]), {key: value for key, value in best.items() if key != "labels"} | {"labels": best["labels"]}
 
 
 def cluster_labels(frame: pd.DataFrame, labels: np.ndarray, tfidf_matrix, vectorizer) -> dict:
@@ -102,8 +171,11 @@ def cluster_labels(frame: pd.DataFrame, labels: np.ndarray, tfidf_matrix, vector
                 counts[tag] = counts.get(tag, 0) + 1
         ranked_tags = sorted(counts.items(), key=lambda item: (-item[1], item[0]))
         size = int(member.sum())
+        specific = [(tag, count) for tag, count in ranked_tags if tag.lower() not in GENERIC_TAGS]
         # A tag labels the cluster only when it covers a meaningful share of members.
-        strong = [tag for tag, count in ranked_tags if count >= max(3, int(0.18 * size))][:3]
+        strong = [tag for tag, count in specific if count >= max(3, int(0.12 * size))][:3]
+        if not strong:
+            strong = [tag for tag, _ in specific[:2]]
         centroid = np.asarray(tfidf_matrix[member].mean(axis=0)).ravel()
         top_idx = centroid.argsort()[::-1][:6]
         terms = [feature_names[i] for i in top_idx if centroid[i] > 0][:4]
@@ -126,9 +198,13 @@ def build(frame: pd.DataFrame | None = None) -> dict:
     tfidf = vectorizer.transform(texts)
     print("encoding sentence embeddings", flush=True)
     embeddings = encode_sentences(texts)
-    k, silhouette = choose_k(embeddings)
-    print(f"k-means k={k} silhouette={silhouette:.3f}", flush=True)
-    labels = KMeans(n_clusters=k, n_init=10, random_state=17).fit_predict(embeddings)
+    reduced = normalize(PCA(n_components=50, random_state=17).fit_transform(embeddings))
+    k, selection = choose_k(reduced, specific_tag_sets(frame))
+    labels = selection.pop("labels")
+    print(
+        f"k-means k={k} silhouette={selection['silhouette']:.3f} purity={selection['tag_purity']:.3f}",
+        flush=True,
+    )
     names = cluster_labels(frame, labels, tfidf, vectorizer)
     pca = PCA(n_components=2, random_state=17)
     coords = pca.fit_transform(embeddings)
@@ -146,7 +222,8 @@ def build(frame: pd.DataFrame | None = None) -> dict:
                 "model": MODEL_NAME,
                 "n_problems": int(len(frame)),
                 "k": int(k),
-                "silhouette": silhouette,
+                "silhouette": selection["silhouette"],
+                "tag_purity": selection["tag_purity"],
                 "pca_explained_variance": [float(v) for v in pca.explained_variance_ratio_],
             },
             indent=2,
@@ -180,8 +257,9 @@ class Retriever:
             from sentence_transformers import SentenceTransformer
 
             self._model = SentenceTransformer(MODEL_NAME)
+        prefixed = [QUERY_PREFIX + text for text in texts]
         return self._model.encode(
-            texts, normalize_embeddings=True, convert_to_numpy=True
+            prefixed, normalize_embeddings=True, convert_to_numpy=True
         ).astype(np.float32)
 
     def score(self, query: str) -> dict[str, np.ndarray]:

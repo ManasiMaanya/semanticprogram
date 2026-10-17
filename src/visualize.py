@@ -36,7 +36,7 @@ def plot() -> None:
         )
     ax.set_xlabel("PCA 1")
     ax.set_ylabel("PCA 2")
-    ax.set_title("CodeChef problems embedded with MiniLM, colored by K-means cluster")
+    ax.set_title("CodeChef problems embedded with BGE-small, colored by K-means cluster")
     ax.legend(loc="best", fontsize=7, frameon=False, markerscale=1.4)
     fig.tight_layout()
     fig.savefig(FIGURES / "clusters_pca.png", dpi=160)

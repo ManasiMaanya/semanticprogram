@@ -1,0 +1,12 @@
+{
+  "model": "BAAI/bge-small-en-v1.5",
+  "n_problems": 1316,
+  "k": 16,
+  "silhouette": 0.0663510262966156,
+  "tag_purity": 0.26488604856625436,
+  "pca_explained_variance": [
+    0.07702086120843887,
+    0.04177346080541611
+  ],
+  "hybrid_alpha": 0.65
+}
