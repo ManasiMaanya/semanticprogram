@@ -52,6 +52,8 @@ The stored `distinctive_terms` are always the top TF-IDF centroid words, so ever
 
 PCA projects the embeddings to two dimensions for `artifacts/figures/clusters_pca.png`. The first two components are a map, not a claim that two axes explain the space. The explained-variance ratio is stored in `artifacts/meta.json`.
 
+`src/explain.py` writes `reports/clusters_explained.md` and `.json`. For each cluster it reports the specific tags and how much of the cluster they cover (spelling variants are merged), the distinctive words, the difficulty range, and the three problems closest to the cluster centroid — the most typical members. The narrative is generated from the cluster's own members, so it cannot drift from the artifacts, and the same text appears in the app's Clusters tab.
+
 ## Retrieval API
 
 ```python
@@ -112,6 +114,7 @@ Run the tests with `pip install -r dev-requirements.txt` then `pytest -q` (or `p
 | `src/preprocess.py` | Cleaning and tag filtering |
 | `src/engine.py` | TF-IDF, BGE embeddings, hybrid search, K-means, recommendations |
 | `src/evaluate.py` | Metrics, error slices, demo queries |
+| `src/explain.py` | Per-cluster explanations and representative problems |
 | `src/visualize.py` | PCA map, cluster sizes, difficulty, tag chart |
 | `src/pipeline.py` | End-to-end run |
 | `app.py` | Streamlit explorer |

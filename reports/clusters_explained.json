@@ -1,0 +1,1407 @@
+{
+  "0": {
+    "label": "Dynamic Programming, Graph Algos",
+    "size": 75,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 17,
+        "share": 0.22666666666666666
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 11,
+        "share": 0.14666666666666667
+      },
+      {
+        "tag": "Implementation",
+        "count": 7,
+        "share": 0.09333333333333334
+      },
+      {
+        "tag": "Challenge Problem",
+        "count": 6,
+        "share": 0.08
+      },
+      {
+        "tag": "Graphs",
+        "count": 6,
+        "share": 0.08
+      },
+      {
+        "tag": "Probability",
+        "count": 6,
+        "share": 0.08
+      }
+    ],
+    "distinctive_terms": [
+      "cell",
+      "cells",
+      "grid",
+      "moves"
+    ],
+    "difficulty_min": 633,
+    "difficulty_max": 3714,
+    "representatives": [
+      {
+        "code": "FIRSTGEO",
+        "title": "My First Geometry Problem",
+        "difficulty": 1171,
+        "similarity": 0.8785344362258911,
+        "tags": [
+          "Observation",
+          "Brute Force",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/FIRSTGEO"
+      },
+      {
+        "code": "BINLAND",
+        "title": "Binary Land",
+        "difficulty": 2608,
+        "similarity": 0.8707606792449951,
+        "tags": [
+          "Queues",
+          "Stacks",
+          "Matrix Multiplication",
+          "Dynamic Programming",
+          "Divide and Conquer",
+          "Data Structures",
+          "Mathematics",
+          "Matrices",
+          "Algorithms",
+          "Recursion"
+        ],
+        "link": "https://www.codechef.com/problems/BINLAND"
+      },
+      {
+        "code": "RNDGRID",
+        "title": "Bear and Random Grid",
+        "difficulty": 2420,
+        "similarity": 0.8706042766571045,
+        "tags": [
+          "Randomized Algorithms",
+          "Expected Value",
+          "Binary Search",
+          "Advanced Algorithms",
+          "Mathematics",
+          "Probability",
+          "Algorithms",
+          "Searching"
+        ],
+        "link": "https://www.codechef.com/problems/RNDGRID"
+      }
+    ],
+    "narrative": "Cluster 0 holds 75 problems. Its shared theme is Dynamic Programming, Graph Algos. The common thread is Dynamic Programming: 23% of members carry *Dynamic Programming*. These problems are linked by the technique, not a shared story. The most distinctive words are `cell`, `cells`, `grid`, `moves`. Problems nearest the cluster centre, its most typical members, are `FIRSTGEO`, `BINLAND`, `RNDGRID`."
+  },
+  "1": {
+    "label": "Dynamic Programming, ad-hoc, Arrays",
+    "size": 72,
+    "top_specific_tags": [
+      {
+        "tag": "Bitwise Operation",
+        "count": 10,
+        "share": 0.1388888888888889
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 10,
+        "share": 0.1388888888888889
+      },
+      {
+        "tag": "Arrays",
+        "count": 8,
+        "share": 0.1111111111111111
+      },
+      {
+        "tag": "Binary Search",
+        "count": 8,
+        "share": 0.1111111111111111
+      },
+      {
+        "tag": "Advanced Tree Structures",
+        "count": 7,
+        "share": 0.09722222222222222
+      },
+      {
+        "tag": "Bit Manipulation",
+        "count": 7,
+        "share": 0.09722222222222222
+      }
+    ],
+    "distinctive_terms": [
+      "array",
+      "sequence",
+      "elements",
+      "number"
+    ],
+    "difficulty_min": 374,
+    "difficulty_max": 3683,
+    "representatives": [
+      {
+        "code": "FRMQ",
+        "title": "Chef and Array",
+        "difficulty": 2360,
+        "similarity": 0.9058769345283508,
+        "tags": [
+          "Sparse Table",
+          "Segment Trees",
+          "Range Minimum Queries",
+          "Advanced Data Structures",
+          "Advanced Tree Structures",
+          "Algorithms",
+          "Queries"
+        ],
+        "link": "https://www.codechef.com/problems/FRMQ"
+      },
+      {
+        "code": "CHEFSORT",
+        "title": "Chef and Sorting",
+        "difficulty": 2683,
+        "similarity": 0.904448390007019,
+        "tags": [
+          "Bitwise Operation",
+          "Sorting",
+          "Mathematics",
+          "Bit Manipulation",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/CHEFSORT"
+      },
+      {
+        "code": "ORSUBSORT",
+        "title": "Subsequence Sort",
+        "difficulty": 1821,
+        "similarity": 0.8997471332550049,
+        "tags": [
+          "bitwise-operation",
+          "Bitwise Operation"
+        ],
+        "link": "https://www.codechef.com/problems/ORSUBSORT"
+      }
+    ],
+    "narrative": "Cluster 1 holds 72 problems. Its shared theme is Dynamic Programming, ad-hoc, Arrays. No single specific tag dominates, so these problems sit together on vocabulary and problem shape rather than one named technique. The most distinctive words are `array`, `sequence`, `elements`, `number`. Problems nearest the cluster centre, its most typical members, are `FRMQ`, `CHEFSORT`, `ORSUBSORT`."
+  },
+  "2": {
+    "label": "Dynamic Programming, ad-hoc, Number Theory",
+    "size": 67,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 13,
+        "share": 0.19402985074626866
+      },
+      {
+        "tag": "Number Theory",
+        "count": 10,
+        "share": 0.14925373134328357
+      },
+      {
+        "tag": "Arrays",
+        "count": 8,
+        "share": 0.11940298507462686
+      },
+      {
+        "tag": "Implementation",
+        "count": 8,
+        "share": 0.11940298507462686
+      },
+      {
+        "tag": "Bit Manipulation",
+        "count": 7,
+        "share": 0.1044776119402985
+      },
+      {
+        "tag": "Bitwise Operation",
+        "count": 7,
+        "share": 0.1044776119402985
+      }
+    ],
+    "distinctive_terms": [
+      "contains",
+      "10",
+      "constraints",
+      "space"
+    ],
+    "difficulty_min": 855,
+    "difficulty_max": 3466,
+    "representatives": [
+      {
+        "code": "WEIRD2",
+        "title": "Weird Question",
+        "difficulty": 1882,
+        "similarity": 0.9184422492980957,
+        "tags": [
+          "Frequency Arrays",
+          "Optimization Problems",
+          "Data Structures",
+          "Arrays",
+          "Special"
+        ],
+        "link": "https://www.codechef.com/problems/WEIRD2"
+      },
+      {
+        "code": "MINMAXIN",
+        "title": "Minimum and Maximum",
+        "difficulty": 2741,
+        "similarity": 0.9167908430099487,
+        "tags": [
+          "Binary Tree",
+          "Interactive Problems",
+          "Observation",
+          "Data Structures",
+          "Tree Data Structure",
+          "Special",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/MINMAXIN"
+      },
+      {
+        "code": "DIANE",
+        "title": "Yet Another Crossover Episode",
+        "difficulty": 2221,
+        "similarity": 0.9025071859359741,
+        "tags": [
+          "ad-hoc",
+          "Algorithms",
+          "Constructive",
+          "Ad Hoc"
+        ],
+        "link": "https://www.codechef.com/problems/DIANE"
+      }
+    ],
+    "narrative": "Cluster 2 holds 67 problems. Its shared theme is Dynamic Programming, ad-hoc, Number Theory. The common thread is Dynamic Programming: 19% of members carry *Dynamic Programming*. These problems are linked by the technique, not a shared story. The most distinctive words are `contains`, `10`, `constraints`, `space`. Problems nearest the cluster centre, its most typical members, are `WEIRD2`, `MINMAXIN`, `DIANE`."
+  },
+  "3": {
+    "label": "ad-hoc",
+    "size": 79,
+    "top_specific_tags": [
+      {
+        "tag": "Implementation",
+        "count": 7,
+        "share": 0.08860759493670886
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 6,
+        "share": 0.0759493670886076
+      },
+      {
+        "tag": "Greedy",
+        "count": 6,
+        "share": 0.0759493670886076
+      },
+      {
+        "tag": "Graphs",
+        "count": 5,
+        "share": 0.06329113924050633
+      },
+      {
+        "tag": "Sorting",
+        "count": 5,
+        "share": 0.06329113924050633
+      },
+      {
+        "tag": "Arrays",
+        "count": 4,
+        "share": 0.05063291139240506
+      }
+    ],
+    "distinctive_terms": [
+      "rupees",
+      "wants",
+      "number",
+      "buy"
+    ],
+    "difficulty_min": 253,
+    "difficulty_max": 3550,
+    "representatives": [
+      {
+        "code": "RECNDNOS",
+        "title": "Chef and Numbers",
+        "difficulty": 1396,
+        "similarity": 0.8855835199356079,
+        "tags": [
+          "Greedy",
+          "Observation",
+          "Brute Force",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/RECNDNOS"
+      },
+      {
+        "code": "PRGIFT",
+        "title": "Chef and Gift",
+        "difficulty": 1420,
+        "similarity": 0.8830229043960571,
+        "tags": [
+          "ad-hoc",
+          "Algorithms",
+          "Constructive",
+          "Ad Hoc"
+        ],
+        "link": "https://www.codechef.com/problems/PRGIFT"
+      },
+      {
+        "code": "PARPERM",
+        "title": "Partition It",
+        "difficulty": 2202,
+        "similarity": 0.8773539066314697,
+        "tags": [
+          "Sieve of Eratosthenes",
+          "Implementation",
+          "Mathematics",
+          "Number Theory",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/PARPERM"
+      }
+    ],
+    "narrative": "Cluster 3 holds 79 problems. Its shared theme is ad-hoc. No single specific tag dominates, so these problems sit together on vocabulary and problem shape rather than one named technique. The most distinctive words are `rupees`, `wants`, `number`, `buy`. Problems nearest the cluster centre, its most typical members, are `RECNDNOS`, `PRGIFT`, `PARPERM`."
+  },
+  "4": {
+    "label": "Implementation, Arrays, ad-hoc",
+    "size": 67,
+    "top_specific_tags": [
+      {
+        "tag": "Implementation",
+        "count": 14,
+        "share": 0.208955223880597
+      },
+      {
+        "tag": "Arrays",
+        "count": 8,
+        "share": 0.11940298507462686
+      },
+      {
+        "tag": "Simple Algos",
+        "count": 6,
+        "share": 0.08955223880597014
+      },
+      {
+        "tag": "Greedy",
+        "count": 5,
+        "share": 0.07462686567164178
+      },
+      {
+        "tag": "Prefix Sum",
+        "count": 5,
+        "share": 0.07462686567164178
+      },
+      {
+        "tag": "Challenge Problem",
+        "count": 4,
+        "share": 0.05970149253731343
+      }
+    ],
+    "distinctive_terms": [
+      "contains",
+      "10",
+      "space",
+      "separated"
+    ],
+    "difficulty_min": 580,
+    "difficulty_max": 3661,
+    "representatives": [
+      {
+        "code": "PLMU",
+        "title": "Plus Multiply",
+        "difficulty": 1277,
+        "similarity": 0.9162172079086304,
+        "tags": [
+          "Basic Math",
+          "Combinatorics",
+          "ad-hoc",
+          "Observation",
+          "Mathematics",
+          "Algorithms",
+          "Constructive",
+          "Ad Hoc"
+        ],
+        "link": "https://www.codechef.com/problems/PLMU"
+      },
+      {
+        "code": "CHNUM",
+        "title": "Chef and Number Game",
+        "difficulty": 1188,
+        "similarity": 0.9119150638580322,
+        "tags": [
+          "Basic Math",
+          "Observation",
+          "Mathematics",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/CHNUM"
+      },
+      {
+        "code": "INTXOR",
+        "title": "Chef and Interactive XOR",
+        "difficulty": 1930,
+        "similarity": 0.9096444249153137,
+        "tags": [
+          "Interactive Problems",
+          "Bit Manipulation",
+          "Special",
+          "Mathematics"
+        ],
+        "link": "https://www.codechef.com/problems/INTXOR"
+      }
+    ],
+    "narrative": "Cluster 4 holds 67 problems. Its shared theme is Implementation, Arrays, ad-hoc. The common thread is Implementation: 21% of members carry *Implementation*. These problems are linked by the technique, not a shared story. The most distinctive words are `contains`, `10`, `space`, `separated`. Problems nearest the cluster centre, its most typical members, are `PLMU`, `CHNUM`, `INTXOR`."
+  },
+  "5": {
+    "label": "Dynamic Programming",
+    "size": 152,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 42,
+        "share": 0.27631578947368424
+      },
+      {
+        "tag": "Prefix Sum",
+        "count": 19,
+        "share": 0.125
+      },
+      {
+        "tag": "Binary Search",
+        "count": 16,
+        "share": 0.10526315789473684
+      },
+      {
+        "tag": "easy-medium",
+        "count": 16,
+        "share": 0.10526315789473684
+      },
+      {
+        "tag": "Number Theory",
+        "count": 15,
+        "share": 0.09868421052631579
+      },
+      {
+        "tag": "Simple Algos",
+        "count": 13,
+        "share": 0.08552631578947369
+      }
+    ],
+    "distinctive_terms": [
+      "array",
+      "elements",
+      "a_i",
+      "length"
+    ],
+    "difficulty_min": 607,
+    "difficulty_max": 3682,
+    "representatives": [
+      {
+        "code": "ONETOTHREE",
+        "title": "One To Three",
+        "difficulty": 1908,
+        "similarity": 0.8964876532554626,
+        "tags": [],
+        "link": "https://www.codechef.com/problems/ONETOTHREE"
+      },
+      {
+        "code": "MAXSUBARR",
+        "title": "Maximum Subarray ",
+        "difficulty": 1613,
+        "similarity": 0.8961368799209595,
+        "tags": [
+          "Arrays",
+          "Basic Math",
+          "Kadane Algorithm",
+          "Data Structures",
+          "Mathematics",
+          "Algorithms",
+          "Greedy"
+        ],
+        "link": "https://www.codechef.com/problems/MAXSUBARR"
+      },
+      {
+        "code": "SUBPRNJL",
+        "title": "Yet Again a Subarray Problem",
+        "difficulty": 2102,
+        "similarity": 0.8913902044296265,
+        "tags": [
+          "binary-search",
+          "prefix-sum",
+          "segment-tree",
+          "Binary Search"
+        ],
+        "link": "https://www.codechef.com/problems/SUBPRNJL"
+      }
+    ],
+    "narrative": "Cluster 5 holds 152 problems. Its shared theme is Dynamic Programming. The common thread is Dynamic Programming: 28% of members carry *Dynamic Programming*. These problems are linked by the technique, not a shared story. The most distinctive words are `array`, `elements`, `a_i`, `length`. Problems nearest the cluster centre, its most typical members, are `ONETOTHREE`, `MAXSUBARR`, `SUBPRNJL`."
+  },
+  "6": {
+    "label": "Combinatorics, Dynamic Programming",
+    "size": 58,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 10,
+        "share": 0.1724137931034483
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 8,
+        "share": 0.13793103448275862
+      },
+      {
+        "tag": "Number Theory",
+        "count": 5,
+        "share": 0.08620689655172414
+      },
+      {
+        "tag": "Bit Manipulation",
+        "count": 4,
+        "share": 0.06896551724137931
+      },
+      {
+        "tag": "Bitwise Operation",
+        "count": 4,
+        "share": 0.06896551724137931
+      },
+      {
+        "tag": "easy-medium",
+        "count": 4,
+        "share": 0.06896551724137931
+      }
+    ],
+    "distinctive_terms": [
+      "permutation",
+      "permutations",
+      "p_i",
+      "array"
+    ],
+    "difficulty_min": 1049,
+    "difficulty_max": 3504,
+    "representatives": [
+      {
+        "code": "PORX",
+        "title": "OR What",
+        "difficulty": 1546,
+        "similarity": 0.9296740889549255,
+        "tags": [
+          "bitwise-operation",
+          "Bitwise Operation"
+        ],
+        "link": "https://www.codechef.com/problems/PORX"
+      },
+      {
+        "code": "PERMUTATION2",
+        "title": "Permutation Pair",
+        "difficulty": 2468,
+        "similarity": 0.9206715822219849,
+        "tags": [
+          "Combinatorics",
+          "Brute Force",
+          "Mathematics",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/PERMUTATION2"
+      },
+      {
+        "code": "CREATEPERM",
+        "title": "Permutation Construction",
+        "difficulty": 1389,
+        "similarity": 0.9113005995750427,
+        "tags": [
+          "Constructive",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/CREATEPERM"
+      }
+    ],
+    "narrative": "Cluster 6 holds 58 problems. Its shared theme is Combinatorics, Dynamic Programming. The common thread is Dynamic Programming: 17% of members carry *Dynamic Programming*. These problems are linked by the technique, not a shared story. The most distinctive words are `permutation`, `permutations`, `p_i`, `array`. Problems nearest the cluster centre, its most typical members, are `PORX`, `PERMUTATION2`, `CREATEPERM`."
+  },
+  "7": {
+    "label": "Dynamic Programming, Graph Algos",
+    "size": 101,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 14,
+        "share": 0.13861386138613863
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 9,
+        "share": 0.0891089108910891
+      },
+      {
+        "tag": "Graphs",
+        "count": 9,
+        "share": 0.0891089108910891
+      },
+      {
+        "tag": "Advanced Graph Algos",
+        "count": 8,
+        "share": 0.07920792079207921
+      },
+      {
+        "tag": "Conditional Statements",
+        "count": 7,
+        "share": 0.06930693069306931
+      },
+      {
+        "tag": "Implementation",
+        "count": 7,
+        "share": 0.06930693069306931
+      }
+    ],
+    "distinctive_terms": [
+      "people",
+      "number",
+      "time",
+      "person"
+    ],
+    "difficulty_min": 264,
+    "difficulty_max": 3692,
+    "representatives": [
+      {
+        "code": "RRJOKE",
+        "title": "Good Joke!",
+        "difficulty": 1163,
+        "similarity": 0.8216077089309692,
+        "tags": [
+          "ad-hoc",
+          "Algorithms",
+          "Constructive",
+          "Ad Hoc"
+        ],
+        "link": "https://www.codechef.com/problems/RRJOKE"
+      },
+      {
+        "code": "SPRALL",
+        "title": "Separate Them All",
+        "difficulty": 2425,
+        "similarity": 0.8109782338142395,
+        "tags": [
+          "Trees",
+          "Mathematics",
+          "Data Structures",
+          "Graphs"
+        ],
+        "link": "https://www.codechef.com/problems/SPRALL"
+      },
+      {
+        "code": "SLMNTRV",
+        "title": "Salesman Travels",
+        "difficulty": 1668,
+        "similarity": 0.80620938539505,
+        "tags": [],
+        "link": "https://www.codechef.com/problems/SLMNTRV"
+      }
+    ],
+    "narrative": "Cluster 7 holds 101 problems. Its shared theme is Dynamic Programming, Graph Algos. No single specific tag dominates, so these problems sit together on vocabulary and problem shape rather than one named technique. The most distinctive words are `people`, `number`, `time`, `person`. Problems nearest the cluster centre, its most typical members, are `RRJOKE`, `SPRALL`, `SLMNTRV`."
+  },
+  "8": {
+    "label": "String, ad-hoc",
+    "size": 119,
+    "top_specific_tags": [
+      {
+        "tag": "String",
+        "count": 26,
+        "share": 0.2184873949579832
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 16,
+        "share": 0.13445378151260504
+      },
+      {
+        "tag": "Arrays",
+        "count": 8,
+        "share": 0.06722689075630252
+      },
+      {
+        "tag": "Greedy",
+        "count": 8,
+        "share": 0.06722689075630252
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 6,
+        "share": 0.05042016806722689
+      },
+      {
+        "tag": "Frequency Arrays",
+        "count": 6,
+        "share": 0.05042016806722689
+      }
+    ],
+    "distinctive_terms": [
+      "string",
+      "strings",
+      "characters",
+      "length"
+    ],
+    "difficulty_min": 595,
+    "difficulty_max": 3699,
+    "representatives": [
+      {
+        "code": "ANOTSTR",
+        "title": "Another String",
+        "difficulty": 1140,
+        "similarity": 0.900671124458313,
+        "tags": [],
+        "link": "https://www.codechef.com/problems/ANOTSTR"
+      },
+      {
+        "code": "BALREV",
+        "title": "Balanced Reversals",
+        "difficulty": 1165,
+        "similarity": 0.8921515941619873,
+        "tags": [
+          "String",
+          "Sorting",
+          "Observation",
+          "Data Structures",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/BALREV"
+      },
+      {
+        "code": "SAMESTR",
+        "title": "Convert string",
+        "difficulty": 1361,
+        "similarity": 0.8894312381744385,
+        "tags": [],
+        "link": "https://www.codechef.com/problems/SAMESTR"
+      }
+    ],
+    "narrative": "Cluster 8 holds 119 problems. Its shared theme is String, ad-hoc. The common thread is String: 22% of members carry *String*. These problems are linked by the technique, not a shared story. The most distinctive words are `string`, `strings`, `characters`, `length`. Problems nearest the cluster centre, its most typical members, are `ANOTSTR`, `BALREV`, `SAMESTR`."
+  },
+  "9": {
+    "label": "Bit Manipulation, Bitwise Operation",
+    "size": 44,
+    "top_specific_tags": [
+      {
+        "tag": "Bit Manipulation",
+        "count": 26,
+        "share": 0.5909090909090909
+      },
+      {
+        "tag": "Bitwise Operation",
+        "count": 25,
+        "share": 0.5681818181818182
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 5,
+        "share": 0.11363636363636363
+      },
+      {
+        "tag": "Binary Search",
+        "count": 3,
+        "share": 0.06818181818181818
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 3,
+        "share": 0.06818181818181818
+      },
+      {
+        "tag": "prefix-sum",
+        "count": 3,
+        "share": 0.06818181818181818
+      }
+    ],
+    "distinctive_terms": [
+      "xor",
+      "bitwise",
+      "bitwise_operation",
+      "wiki bitwise_operation"
+    ],
+    "difficulty_min": 1335,
+    "difficulty_max": 3435,
+    "representatives": [
+      {
+        "code": "CRINGEQUERY",
+        "title": "Cringe Queries",
+        "difficulty": 2855,
+        "similarity": 0.9338706731796265,
+        "tags": [
+          "Graphs",
+          "Bitwise Operation",
+          "Combinatorics",
+          "Observation",
+          "Data Structures",
+          "Mathematics",
+          "Bit Manipulation",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/CRINGEQUERY"
+      },
+      {
+        "code": "P7BAR",
+        "title": "Distinct Fun",
+        "difficulty": 1628,
+        "similarity": 0.9113397598266602,
+        "tags": [],
+        "link": "https://www.codechef.com/problems/P7BAR"
+      },
+      {
+        "code": "PALINT",
+        "title": "XOR Equal",
+        "difficulty": 1731,
+        "similarity": 0.9080111980438232,
+        "tags": [
+          "Frequency Arrays",
+          "Bit Manipulation",
+          "Data Structures",
+          "Arrays",
+          "Mathematics"
+        ],
+        "link": "https://www.codechef.com/problems/PALINT"
+      }
+    ],
+    "narrative": "Cluster 9 holds 44 problems. Its shared theme is Bit Manipulation, Bitwise Operation. The common thread is Bit Manipulation: 59% of members carry *Bit Manipulation* and 57% carry *Bitwise Operation*. These problems are linked by the technique, not a shared story. The most distinctive words are `xor`, `bitwise`, `bitwise_operation`, `wiki bitwise_operation`. Problems nearest the cluster centre, its most typical members, are `CRINGEQUERY`, `P7BAR`, `PALINT`."
+  },
+  "10": {
+    "label": "Graph Algos, Challenge Problem, Dynamic Programming",
+    "size": 56,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 11,
+        "share": 0.19642857142857142
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 11,
+        "share": 0.19642857142857142
+      },
+      {
+        "tag": "Challenge Problem",
+        "count": 8,
+        "share": 0.14285714285714285
+      },
+      {
+        "tag": "Computational Geometry",
+        "count": 7,
+        "share": 0.125
+      },
+      {
+        "tag": "DFS",
+        "count": 7,
+        "share": 0.125
+      },
+      {
+        "tag": "Graphs",
+        "count": 7,
+        "share": 0.125
+      }
+    ],
+    "distinctive_terms": [
+      "vertices",
+      "graph",
+      "edges",
+      "points"
+    ],
+    "difficulty_min": 985,
+    "difficulty_max": 4031,
+    "representatives": [
+      {
+        "code": "NPORP",
+        "title": "Solve what you want",
+        "difficulty": 2688,
+        "similarity": 0.8867616653442383,
+        "tags": [
+          "DFS",
+          "Observation",
+          "Algorithms",
+          "Graph Algos",
+          "Traversals"
+        ],
+        "link": "https://www.codechef.com/problems/NPORP"
+      },
+      {
+        "code": "CNTGRP",
+        "title": "Counting Graphs",
+        "difficulty": 2511,
+        "similarity": 0.8781850337982178,
+        "tags": [
+          "Graphs",
+          "Modular Exponentiation",
+          "Modulo Multiplicative Inverse",
+          "Combinatorics",
+          "Data Structures",
+          "Mathematics",
+          "Modular Arithmetic"
+        ],
+        "link": "https://www.codechef.com/problems/CNTGRP"
+      },
+      {
+        "code": "CNTIT",
+        "title": "Count It",
+        "difficulty": 2927,
+        "similarity": 0.8762410879135132,
+        "tags": [
+          "Fenwick Trees",
+          "Centroid Decomposition",
+          "Basic Math",
+          "DFS",
+          "Advanced Data Structures",
+          "Advanced Tree Structures",
+          "Advanced Algorithms",
+          "Advanced Graph Algos",
+          "Mathematics",
+          "Algorithms",
+          "Graph Algos",
+          "Traversals"
+        ],
+        "link": "https://www.codechef.com/problems/CNTIT"
+      }
+    ],
+    "narrative": "Cluster 10 holds 56 problems. Its shared theme is Graph Algos, Challenge Problem, Dynamic Programming. The common thread is Dynamic Programming: 20% of members carry *Dynamic Programming* and 20% carry *Graph Algos*. These problems are linked by the technique, not a shared story. The most distinctive words are `vertices`, `graph`, `edges`, `points`. Problems nearest the cluster centre, its most typical members, are `NPORP`, `CNTGRP`, `CNTIT`."
+  },
+  "11": {
+    "label": "Game Theory, Dynamic Programming",
+    "size": 94,
+    "top_specific_tags": [
+      {
+        "tag": "Game Theory",
+        "count": 22,
+        "share": 0.23404255319148937
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 15,
+        "share": 0.1595744680851064
+      },
+      {
+        "tag": "Implementation",
+        "count": 9,
+        "share": 0.09574468085106383
+      },
+      {
+        "tag": "Sorting",
+        "count": 6,
+        "share": 0.06382978723404255
+      },
+      {
+        "tag": "Arrays",
+        "count": 5,
+        "share": 0.05319148936170213
+      },
+      {
+        "tag": "Conditional Statements",
+        "count": 5,
+        "share": 0.05319148936170213
+      }
+    ],
+    "distinctive_terms": [
+      "game",
+      "player",
+      "players",
+      "alice"
+    ],
+    "difficulty_min": 282,
+    "difficulty_max": 3750,
+    "representatives": [
+      {
+        "code": "TABGAME",
+        "title": "Table Game",
+        "difficulty": 2072,
+        "similarity": 0.9014398455619812,
+        "tags": [
+          "2D Arrays",
+          "String",
+          "Pre processing",
+          "Game Theory",
+          "Observation",
+          "Data Structures",
+          "Arrays",
+          "Advanced Algorithms",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/TABGAME"
+      },
+      {
+        "code": "HP18",
+        "title": "Lucky Number Game",
+        "difficulty": 1500,
+        "similarity": 0.8968652486801147,
+        "tags": [
+          "Basic Math",
+          "Mathematics"
+        ],
+        "link": "https://www.codechef.com/problems/HP18"
+      },
+      {
+        "code": "DIVGAME",
+        "title": "Game of Divisors",
+        "difficulty": 2274,
+        "similarity": 0.8920818567276001,
+        "tags": [
+          "Game Theory",
+          "Primes",
+          "Mathematics",
+          "Number Theory",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/DIVGAME"
+      }
+    ],
+    "narrative": "Cluster 11 holds 94 problems. Its shared theme is Game Theory, Dynamic Programming. The common thread is Game Theory: 23% of members carry *Game Theory* and 16% carry *Dynamic Programming*. These problems are linked by the technique, not a shared story. The most distinctive words are `game`, `player`, `players`, `alice`. Problems nearest the cluster centre, its most typical members, are `TABGAME`, `HP18`, `DIVGAME`."
+  },
+  "12": {
+    "label": "Number Theory",
+    "size": 77,
+    "top_specific_tags": [
+      {
+        "tag": "Number Theory",
+        "count": 18,
+        "share": 0.23376623376623376
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 7,
+        "share": 0.09090909090909091
+      },
+      {
+        "tag": "Greedy",
+        "count": 7,
+        "share": 0.09090909090909091
+      },
+      {
+        "tag": "Bitwise Operation",
+        "count": 6,
+        "share": 0.07792207792207792
+      },
+      {
+        "tag": "Matrices",
+        "count": 6,
+        "share": 0.07792207792207792
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 5,
+        "share": 0.06493506493506493
+      }
+    ],
+    "distinctive_terms": [
+      "numbers",
+      "sequence",
+      "matrix",
+      "positive"
+    ],
+    "difficulty_min": 271,
+    "difficulty_max": 3775,
+    "representatives": [
+      {
+        "code": "NDANDANDOR",
+        "title": "Non-decreasing AND and OR",
+        "difficulty": 3148,
+        "similarity": 0.8783139586448669,
+        "tags": [
+          "Bitwise Operation",
+          "Combinatorics",
+          "Mathematics",
+          "Bit Manipulation"
+        ],
+        "link": "https://www.codechef.com/problems/NDANDANDOR"
+      },
+      {
+        "code": "MYPROBLEM",
+        "title": "MinAdd",
+        "difficulty": 2684,
+        "similarity": 0.8692007660865784,
+        "tags": [
+          "Greedy",
+          "Implementation",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/MYPROBLEM"
+      },
+      {
+        "code": "GENARSEQ",
+        "title": "Generalized Arithmetic Progression Free Sequence",
+        "difficulty": 1792,
+        "similarity": 0.8679035902023315,
+        "tags": [
+          "Sets",
+          "Maps",
+          "Constructive",
+          "Implementation",
+          "Data Structures",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/GENARSEQ"
+      }
+    ],
+    "narrative": "Cluster 12 holds 77 problems. Its shared theme is Number Theory. The common thread is Number Theory: 23% of members carry *Number Theory*. These problems are linked by the technique, not a shared story. The most distinctive words are `numbers`, `sequence`, `matrix`, `positive`. Problems nearest the cluster centre, its most typical members, are `NDANDANDOR`, `MYPROBLEM`, `GENARSEQ`."
+  },
+  "13": {
+    "label": "Dynamic Programming, Combinatorics",
+    "size": 77,
+    "top_specific_tags": [
+      {
+        "tag": "Dynamic Programming",
+        "count": 14,
+        "share": 0.18181818181818182
+      },
+      {
+        "tag": "Combinatorics",
+        "count": 9,
+        "share": 0.11688311688311688
+      },
+      {
+        "tag": "Greedy",
+        "count": 8,
+        "share": 0.1038961038961039
+      },
+      {
+        "tag": "Binary Search",
+        "count": 7,
+        "share": 0.09090909090909091
+      },
+      {
+        "tag": "Advanced Tree Structures",
+        "count": 6,
+        "share": 0.07792207792207792
+      },
+      {
+        "tag": "Expected Value",
+        "count": 5,
+        "share": 0.06493506493506493
+      }
+    ],
+    "distinctive_terms": [
+      "rupees",
+      "buy",
+      "th",
+      "different"
+    ],
+    "difficulty_min": 281,
+    "difficulty_max": 3676,
+    "representatives": [
+      {
+        "code": "FRICAN",
+        "title": "Friends and Candies",
+        "difficulty": 3097,
+        "similarity": 0.8676642179489136,
+        "tags": [
+          "Flow Networks",
+          "Greedy",
+          "Observation",
+          "Advanced Algorithms",
+          "Advanced Graph Algos",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/FRICAN"
+      },
+      {
+        "code": "CNDLOVE",
+        "title": "Candy Love",
+        "difficulty": 1054,
+        "similarity": 0.8598257899284363,
+        "tags": [
+          "Basic Math",
+          "Observation",
+          "Mathematics",
+          "Algorithms"
+        ],
+        "link": "https://www.codechef.com/problems/CNDLOVE"
+      },
+      {
+        "code": "PAR2",
+        "title": "Parity",
+        "difficulty": 295,
+        "similarity": 0.8549628257751465,
+        "tags": [
+          "Basic Math",
+          "Mathematics"
+        ],
+        "link": "https://www.codechef.com/problems/PAR2"
+      }
+    ],
+    "narrative": "Cluster 13 holds 77 problems. Its shared theme is Dynamic Programming, Combinatorics. The common thread is Dynamic Programming: 18% of members carry *Dynamic Programming*. These problems are linked by the technique, not a shared story. The most distinctive words are `rupees`, `buy`, `th`, `different`. Problems nearest the cluster centre, its most typical members, are `FRICAN`, `CNDLOVE`, `PAR2`."
+  },
+  "14": {
+    "label": "Implementation, ad-hoc",
+    "size": 104,
+    "top_specific_tags": [
+      {
+        "tag": "Implementation",
+        "count": 11,
+        "share": 0.10576923076923077
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 10,
+        "share": 0.09615384615384616
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 9,
+        "share": 0.08653846153846154
+      },
+      {
+        "tag": "Conditional Statements",
+        "count": 8,
+        "share": 0.07692307692307693
+      },
+      {
+        "tag": "Arithmetic",
+        "count": 7,
+        "share": 0.0673076923076923
+      },
+      {
+        "tag": "Advanced Tree Structures",
+        "count": 5,
+        "share": 0.04807692307692308
+      }
+    ],
+    "distinctive_terms": [
+      "time",
+      "chefland",
+      "day",
+      "minutes"
+    ],
+    "difficulty_min": 271,
+    "difficulty_max": 3715,
+    "representatives": [
+      {
+        "code": "RNDRND",
+        "title": "Go Round",
+        "difficulty": 1831,
+        "similarity": 0.8660836815834045,
+        "tags": [
+          "1D Arrays",
+          "ad-hoc",
+          "Brute Force",
+          "Data Structures",
+          "Arrays",
+          "Algorithms",
+          "Constructive",
+          "Ad Hoc"
+        ],
+        "link": "https://www.codechef.com/problems/RNDRND"
+      },
+      {
+        "code": "P4HOME",
+        "title": "Chef and Close Friends",
+        "difficulty": 749,
+        "similarity": 0.863167405128479,
+        "tags": [
+          "Arrays",
+          "Basic Math",
+          "Data Structures",
+          "Mathematics"
+        ],
+        "link": "https://www.codechef.com/problems/P4HOME"
+      },
+      {
+        "code": "WESTAND",
+        "title": "Chef and Direction",
+        "difficulty": 2869,
+        "similarity": 0.8627320528030396,
+        "tags": [],
+        "link": "https://www.codechef.com/problems/WESTAND"
+      }
+    ],
+    "narrative": "Cluster 14 holds 104 problems. Its shared theme is Implementation, ad-hoc. No single specific tag dominates, so these problems sit together on vocabulary and problem shape rather than one named technique. The most distinctive words are `time`, `chefland`, `day`, `minutes`. Problems nearest the cluster centre, its most typical members, are `RNDRND`, `P4HOME`, `WESTAND`."
+  },
+  "15": {
+    "label": "Graphs, Trees, Graph Algos",
+    "size": 74,
+    "top_specific_tags": [
+      {
+        "tag": "Graphs",
+        "count": 30,
+        "share": 0.40540540540540543
+      },
+      {
+        "tag": "Trees",
+        "count": 29,
+        "share": 0.3918918918918919
+      },
+      {
+        "tag": "Dynamic Programming",
+        "count": 28,
+        "share": 0.3783783783783784
+      },
+      {
+        "tag": "Graph Algos",
+        "count": 24,
+        "share": 0.32432432432432434
+      },
+      {
+        "tag": "Traversals",
+        "count": 19,
+        "share": 0.25675675675675674
+      },
+      {
+        "tag": "DFS",
+        "count": 18,
+        "share": 0.24324324324324326
+      }
+    ],
+    "distinctive_terms": [
+      "tree",
+      "node",
+      "nodes",
+      "vertices"
+    ],
+    "difficulty_min": 675,
+    "difficulty_max": 4076,
+    "representatives": [
+      {
+        "code": "TREETREE",
+        "title": "Tree of Trees",
+        "difficulty": 2266,
+        "similarity": 0.9002875089645386,
+        "tags": [
+          "Trees",
+          "Dynamic Programming",
+          "DFS",
+          "Sorting",
+          "Data Structures",
+          "Graphs",
+          "Algorithms",
+          "Graph Algos",
+          "Traversals"
+        ],
+        "link": "https://www.codechef.com/problems/TREETREE"
+      },
+      {
+        "code": "NTA",
+        "title": "Not Tree Again!",
+        "difficulty": 2586,
+        "similarity": 0.896811306476593,
+        "tags": [
+          "Trees",
+          "Tries",
+          "DSU on Trees",
+          "Bitwise Operation",
+          "Data Structures",
+          "Graphs",
+          "Advanced Data Structures",
+          "Advanced Algorithms",
+          "Advanced Graph Algos",
+          "Mathematics",
+          "Bit Manipulation"
+        ],
+        "link": "https://www.codechef.com/problems/NTA"
+      },
+      {
+        "code": "INTREECTIVE2",
+        "title": "Interactive Tree 2",
+        "difficulty": 2935,
+        "similarity": 0.8898574113845825,
+        "tags": [
+          "Interactive Problems",
+          "Binary Search",
+          "Special",
+          "Algorithms",
+          "Searching"
+        ],
+        "link": "https://www.codechef.com/problems/INTREECTIVE2"
+      }
+    ],
+    "narrative": "Cluster 15 holds 74 problems. Its shared theme is Graphs, Trees, Graph Algos. The common thread is Graphs: 41% of members carry *Graphs* and 39% carry *Trees*. These problems are linked by the technique, not a shared story. The most distinctive words are `tree`, `node`, `nodes`, `vertices`. Problems nearest the cluster centre, its most typical members, are `TREETREE`, `NTA`, `INTREECTIVE2`."
+  }
+}

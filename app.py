@@ -10,12 +10,22 @@ import streamlit as st
 
 from src.engine import ART, Retriever
 
+REPORTS = Path(__file__).resolve().parent / "reports"
+
 st.set_page_config(page_title="Déjà Code", layout="wide")
 
 
 @st.cache_resource
 def get_retriever() -> Retriever:
     return Retriever()
+
+
+@st.cache_data
+def load_explanations() -> dict:
+    path = REPORTS / "clusters_explained.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def show_hits(hits: pd.DataFrame) -> None:
@@ -75,6 +85,11 @@ def main() -> None:
         tag_line = ", ".join(f"{item['tag']} ({item['count']})" for item in info["top_tags"][:5]) or "no strong tags"
         st.write(f"Distinctive words: {', '.join(info['distinctive_terms'])}")
         st.write(f"Tags: {tag_line}")
+        explained = load_explanations().get(cluster_id)
+        if explained:
+            st.info(explained["narrative"])
+            reps = ", ".join(f"`{item['code']}`" for item in explained["representatives"])
+            st.markdown(f"**Most typical members:** {reps}")
         members = retriever.frame[retriever.frame["cluster"] == int(cluster_id)].sort_values("difficulty")
         st.dataframe(
             members[["code", "title", "difficulty", "tag_text", "link"]].head(30),

@@ -67,7 +67,7 @@ richer eval slices). No commits since the initial one. Local `main` is level wit
 | I-1 | Improved source is **uncommitted** and unpushed | High (data-loss risk) |
 | I-2 | `README.md` "What the system gets wrong" still says *MiniLM* though the model is now BGE-small | Medium — ✅ fixed in P1 |
 | I-3 | `README.md` Clustering step 1 says threshold **18%**; code uses **12%** | Low — ✅ fixed in P1 |
-| I-4 | Required item 05 explanation is thin — no per-cluster "what makes these similar" write-up | Medium |
+| I-4 | Required item 05 explanation is thin — no per-cluster "what makes these similar" write-up | Medium — ✅ fixed in P3 |
 | I-5 | Evaluation is tag-relevance only; task allows a *manually annotated* set, which would raise confidence | Medium |
 | I-6 | No `dev-requirements.txt` / CI; tests are `unittest` and not automated | Low — ✅ `dev-requirements.txt` + `pytest.ini` added; `pytest -q` green (5 passed). CI still open |
 | I-7 | Sample is 1,316 problems; larger sample is possible and cheap (resumable download) | Low |
@@ -84,7 +84,7 @@ Estimates are focused-work hours for one person. `P0`/`P1` are effectively requi
 | **P0 — Freeze & ship** | Commit the working improvements, push to `origin/main`, tag `v1.0` | Clean `main` with a green test run | 0.5 h | — | ✅ Done (`20c3f70`) |
 | **P1 — Doc & consistency** | Fix I-2, I-3; align README thresholds/model names with code; add `dev-requirements.txt` + pytest shim | README matches code; `pytest` runs | 1.0–1.5 h | P0 | ✅ Done |
 | **P2 — Evaluation depth** | Manual gold set (~50 problem pairs, 2 annotators or self + rubric), report agreement; add recall@k curve and run-to-run seed variance | `reports/gold_set.*`, new section in `evaluation.md` | 3–4 h | P0 | ⬜ Not started |
-| **P3 — Cluster explanation** | Representative problem per cluster + 2–3 sentence "why similar" narrative; embed in README and app Clusters tab | `reports/clusters_explained.md`, app panel | 2–3 h | P0 | ⬜ Not started |
+| **P3 — Cluster explanation** | Representative problem per cluster + 2–3 sentence "why similar" narrative; embed in README and app Clusters tab | `reports/clusters_explained.md`, app panel | 2–3 h | P0 | ✅ Done |
 | **P4 — Scale & performance** | Grow sample (2k–5k), re-run pipeline, optional FAISS index + latency note; measure quality vs size | Updated artifacts + short scaling note | 2–4 h | P0 | ⬜ Not started |
 | **P5 — Bonus depth & polish** | Embedding-model comparison table (TF-IDF/MiniLM/BGE), explicit error taxonomy, LICENSE, demo screenshots | Comparison section + `docs/` screenshots | 2–3 h | P0, P2 | ⬜ Not started |
 
@@ -101,6 +101,7 @@ Estimates are focused-work hours for one person. `P0`/`P1` are effectively requi
 | 2026-10-17 | Audit | Cloned/linked repo, ran tests (5/5 pass), audited deliverables, found I-1…I-7, wrote this plan | `0e3b113` + dirty tree |
 | 2026-10-17 | P0 | Committed the six improved source/doc files plus `tests/`, `reports/`, and non-ignored `artifacts/` + `data/processed/`; pushed `main`; tagged `v1.0`. Tree clean, `origin/main` level. | `20c3f70`, tag `v1.0` |
 | 2026-10-17 | P1 | Fixed I-2 (MiniLM → BGE-small in "what the system gets wrong"), I-3 (clustering label threshold rewritten to match the 12% code path). Added `dev-requirements.txt` (pytest) and `pytest.ini`; documented `pytest -q` in README. | `1d129bb` |
+| 2026-10-17 | P3 | Added `src/explain.py` + `reports/clusters_explained.md/.json`: per-cluster specific-tag shares (variants merged), distinctive words, difficulty range, and the three centroid-nearest problems. Wired into `src/pipeline.py`, the app Clusters tab, and a new test (now 6 passing). Fixed I-4. | pending |
 
 ---
 

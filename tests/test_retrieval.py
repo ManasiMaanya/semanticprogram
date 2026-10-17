@@ -58,6 +58,17 @@ class TestDejaCodePipeline(unittest.TestCase):
             self.assertIn("cluster_label", results.columns)
             self.assertTrue(all(results["score"] >= 0))
 
+    def test_cluster_explanations(self):
+        """Verify the generated per-cluster explanations are present and well formed."""
+        path = ROOT / "reports" / "clusters_explained.json"
+        self.assertTrue(path.exists(), "clusters_explained.json missing")
+        explained = json.loads(path.read_text(encoding="utf-8"))
+        clusters = json.loads(self.clusters_path.read_text(encoding="utf-8"))
+        self.assertEqual(len(explained), len(clusters))
+        for info in explained.values():
+            self.assertTrue(info["narrative"].strip())
+            self.assertGreaterEqual(len(info["representatives"]), 1)
+
     def test_recommendation_engine(self):
         """Verify recommendation engine suggests valid unsolved problems."""
         recs = self.retriever.recommend(["FCTRL"], k=5)

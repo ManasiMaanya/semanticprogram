@@ -8,6 +8,7 @@ from pathlib import Path
 from src.evaluate import demo_queries, run as evaluate
 from src.preprocess import preprocess, save
 from src.engine import build
+from src.explain import explain_all
 from src.visualize import plot
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,6 +49,8 @@ def main() -> None:
     (reports / "exploration.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     build(frame)
     plot()
+    explained = explain_all()
+    print(f"explained {len(explained)} clusters", flush=True)
     metrics = evaluate()
     meta_path = ROOT / "artifacts" / "meta.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
