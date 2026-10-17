@@ -44,10 +44,11 @@ K-means runs on a 50-dimensional PCA of the embeddings. In the raw 384 dimension
 
 Each cluster is labeled automatically:
 
-1. Topic tags that cover at least 18% of the cluster (and at least 3 problems).
-2. If no tag is that common, the highest-weighted TF-IDF terms in the cluster centroid.
+1. Topic tags that cover at least 12% of the cluster (and at least 3 problems), up to three. Tags that only mean "this is a programming problem" (`Algorithms`, `Mathematics`, `Data Structures`, and similar) are ignored.
+2. If no tag clears that bar, the two most common specific tags in the cluster.
+3. If the cluster has no specific tag at all, its highest-weighted TF-IDF centroid terms.
 
-Cluster names ignore tags that only mean "this is a programming problem" (`Algorithms`, `Mathematics`, `Data Structures`, and similar). The label is the specific tags that cover at least 12% of the cluster, otherwise the cluster's distinctive TF-IDF terms.
+The stored `distinctive_terms` are always the top TF-IDF centroid words, so every cluster keeps a description even when its tags are thin.
 
 PCA projects the embeddings to two dimensions for `artifacts/figures/clusters_pca.png`. The first two components are a map, not a claim that two axes explain the space. The explained-variance ratio is stored in `artifacts/meta.json`.
 
@@ -86,7 +87,7 @@ Two extra slices:
 
 ## What the system gets wrong
 
-MiniLM was not trained on competitive-programming jargon, so it can tie together problems that share a setup ("Chef has N integers and T test cases") and miss a rare technique that is only named in a tag. TF-IDF does the opposite: it misses a shortest-path problem that never says "graph". Hybrid search is the compromise, and it still fails when both signals are weak. Clustering inherits the same geometry, so a cluster label is a summary of its members, not a proof that every member uses one algorithm.
+BGE-small was not trained on competitive-programming jargon, so it can tie together problems that share a setup ("Chef has N integers and T test cases") and miss a rare technique that is only named in a tag. TF-IDF does the opposite: it misses a shortest-path problem that never says "graph". Hybrid search is the compromise, and it still fails when both signals are weak. Clustering inherits the same geometry, so a cluster label is a summary of its members, not a proof that every member uses one algorithm.
 
 ## Run
 
@@ -101,13 +102,15 @@ streamlit run app.py
 
 `python -m src.pipeline` cleans the download, fits both indexes, selects `k`, writes figures, and runs evaluation. The Streamlit app searches, browses clusters, and recommends a next problem from solved codes.
 
+Run the tests with `pip install -r dev-requirements.txt` then `pytest -q` (or `python -m unittest discover -s tests`). They check that the index artifacts exist, that `meta.json` and `clusters.json` are well formed, and that search and recommendation return results in all three retrieval modes.
+
 ## Layout
 
 | Path | Role |
 | --- | --- |
 | `src/download.py` | API catalog and stratified sample |
 | `src/preprocess.py` | Cleaning and tag filtering |
-| `src/engine.py` | TF-IDF, MiniLM, hybrid search, K-means, recommendations |
+| `src/engine.py` | TF-IDF, BGE embeddings, hybrid search, K-means, recommendations |
 | `src/evaluate.py` | Metrics, error slices, demo queries |
 | `src/visualize.py` | PCA map, cluster sizes, difficulty, tag chart |
 | `src/pipeline.py` | End-to-end run |
