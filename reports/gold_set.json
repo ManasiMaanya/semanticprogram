@@ -1,0 +1,1685 @@
+{
+  "note": "Manual relevance for hand-written statements. label = 1 when the candidate uses the same underlying technique as the intent, else 0. Candidates are the union of each mode's top-k, so every mode's top-k is judged. Relevance rubric: 1 when the candidate uses the same core technique as the intent; ambiguous candidates are conservatively 0.",
+  "alpha": 0.65,
+  "top_k": 5,
+  "queries": [
+    {
+      "id": "lis",
+      "intent": "longest increasing subsequence",
+      "statement": "Chef has a row of stones, each with a height. She wants the longest sequence of stones, read left to right, in which every kept stone is strictly taller than the one before it. Discarded stones vanish. How many stones can she keep?",
+      "pooled": [
+        {
+          "code": "MMP",
+          "title": "Min-Max Path",
+          "difficulty": 2936,
+          "tags": [
+            "DP Approach",
+            "Memoization",
+            "Algorithms",
+            "Dynamic Programming",
+            "Recursion"
+          ],
+          "scores": {
+            "keyword": 0.1932597235754715,
+            "semantic": 0.7279062271118164,
+            "hybrid": 0.5407799210717733
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "CHEFA",
+          "title": "Chef and easy problem",
+          "difficulty": 1408,
+          "tags": [],
+          "scores": {
+            "keyword": 0.16913967281264716,
+            "semantic": 0.7322187423706055,
+            "hybrid": 0.5351410501439267
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "PSTONES",
+          "title": "Precious Stones ",
+          "difficulty": 2775,
+          "tags": [
+            "dp-on-trees",
+            "dynamic-programming",
+            "walsh-hadamard",
+            "Dynamic Programming"
+          ],
+          "scores": {
+            "keyword": 0.1614032300183057,
+            "semantic": 0.7083004117012024,
+            "hybrid": 0.5168863772505629
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "SEQLCS",
+          "title": "Chef and the Number Sequence",
+          "difficulty": 3031,
+          "tags": [
+            "DP Bitmask",
+            "Longest Common Subsequence",
+            "Advanced Algorithms",
+            "Advanced DP",
+            "Algorithms",
+            "Dynamic Programming",
+            "DP on sequences"
+          ],
+          "scores": {
+            "keyword": 0.0714382425570737,
+            "semantic": 0.7482292652130127,
+            "hybrid": 0.5113524013229696
+          },
+          "label": 1,
+          "reason": "sequence dynamic programming; LIS is the same sequence-DP family"
+        },
+        {
+          "code": "STNGAME",
+          "title": "Stone Game",
+          "difficulty": 2060,
+          "tags": [
+            "String",
+            "Greedy",
+            "Game Theory",
+            "Data Structures",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.1852390935028603,
+            "semantic": 0.6831801533699036,
+            "hybrid": 0.5089007734757417
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "EXPDIF",
+          "title": "Expected Difference",
+          "difficulty": 2706,
+          "tags": [
+            "Combinatorics",
+            "FFT",
+            "Dynamic Programming",
+            "Divide and Conquer",
+            "Mathematics",
+            "Transformations",
+            "Algorithms",
+            "Recursion"
+          ],
+          "scores": {
+            "keyword": 0.1735128435306362,
+            "semantic": 0.6527597308158875,
+            "hybrid": 0.4850233113253528
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "RESTCH",
+          "title": "Chef, Chefina and Restoration",
+          "difficulty": 3220,
+          "tags": [
+            "Multiset",
+            "Segment Trees",
+            "Greedy",
+            "Observation",
+            "Data Structures",
+            "Sets",
+            "Advanced Data Structures",
+            "Advanced Tree Structures",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.016717035956989708,
+            "semantic": 0.7239977121353149,
+            "hybrid": 0.4764494516310432
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "SPCP3",
+          "title": "Marbles",
+          "difficulty": 1385,
+          "tags": [],
+          "scores": {
+            "keyword": 0.0,
+            "semantic": 0.7228009700775146,
+            "hybrid": 0.46982061862945557
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        },
+        {
+          "code": "TALLER",
+          "title": "Who is taller!",
+          "difficulty": 281,
+          "tags": [],
+          "scores": {
+            "keyword": 0.19250561653712148,
+            "semantic": 0.5839409828186035,
+            "hybrid": 0.4469385986596203
+          },
+          "label": 0,
+          "reason": "does not use the longest increasing subsequence technique"
+        }
+      ]
+    },
+    {
+      "id": "dijkstra",
+      "intent": "single-source shortest paths",
+      "statement": "A courier must travel between cities. Each one-way road has a travel time. Find the smallest total time to go from the capital to every other city.",
+      "pooled": [
+        {
+          "code": "SLMNTRV",
+          "title": "Salesman Travels",
+          "difficulty": 1668,
+          "tags": [],
+          "scores": {
+            "keyword": 0.1523279822469747,
+            "semantic": 0.7220395803451538,
+            "hybrid": 0.5226405150503266
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "TWOROADS",
+          "title": "Two Roads",
+          "difficulty": 2860,
+          "tags": [
+            "Geometry",
+            "Implementation",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.19817986691616632,
+            "semantic": 0.6854951977729797,
+            "hybrid": 0.5149348230323983
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "BIKE",
+          "title": "Chef and Bike",
+          "difficulty": 2982,
+          "tags": [
+            "Directed Graphs",
+            "Mathematics",
+            "Matrix Exponentiation",
+            "Data Structures",
+            "Graphs",
+            "Matrices",
+            "Matrix Multiplication"
+          ],
+          "scores": {
+            "keyword": 0.20712858641974327,
+            "semantic": 0.651642382144928,
+            "hybrid": 0.49606253873995215
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "UNRCOST",
+          "title": "Unreachability Cost",
+          "difficulty": 2753,
+          "tags": [
+            "Strongly Connected Components",
+            "Binary Search",
+            "Prefix Sum",
+            "Algorithms",
+            "Graph Algos",
+            "Searching",
+            "Simple Algos"
+          ],
+          "scores": {
+            "keyword": 0.11973677056494808,
+            "semantic": 0.6891403198242188,
+            "hybrid": 0.4898490537416161
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "POST",
+          "title": "Post Office",
+          "difficulty": 2659,
+          "tags": [],
+          "scores": {
+            "keyword": 0.015070781749527092,
+            "semantic": 0.7450441718101501,
+            "hybrid": 0.4895534823086998
+          },
+          "label": 1,
+          "reason": "asks for shortest routes between locations"
+        },
+        {
+          "code": "KIRMEME",
+          "title": "Kirito in Memeland",
+          "difficulty": 2631,
+          "tags": [
+            "Trees",
+            "Centroid Decomposition",
+            "Divide and Conquer",
+            "DFS",
+            "Data Structures",
+            "Graphs",
+            "Advanced Algorithms",
+            "Advanced Graph Algos",
+            "Algorithms",
+            "Recursion",
+            "Graph Algos",
+            "Traversals"
+          ],
+          "scores": {
+            "keyword": 0.20867756822516864,
+            "semantic": 0.6227213740348816,
+            "hybrid": 0.47780603306078534
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "TRFTRBEZ",
+          "title": "Traffic Trouble (Easy)",
+          "difficulty": 2071,
+          "tags": [],
+          "scores": {
+            "keyword": 0.03562811688805314,
+            "semantic": 0.714826226234436,
+            "hybrid": 0.47710688200273754
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "RNDRND",
+          "title": "Go Round",
+          "difficulty": 1831,
+          "tags": [
+            "1D Arrays",
+            "ad-hoc",
+            "Brute Force",
+            "Data Structures",
+            "Arrays",
+            "Algorithms",
+            "Constructive",
+            "Ad Hoc"
+          ],
+          "scores": {
+            "keyword": 0.0324542098912257,
+            "semantic": 0.698633074760437,
+            "hybrid": 0.4654704601352841
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "FBCHEF",
+          "title": "Final Battle of Chef",
+          "difficulty": 2696,
+          "tags": [
+            "Fenwick Trees",
+            "DFS",
+            "BFS",
+            "Offline Queries",
+            "Online Queries",
+            "Advanced Data Structures",
+            "Advanced Tree Structures",
+            "Algorithms",
+            "Graph Algos",
+            "Traversals",
+            "Queries"
+          ],
+          "scores": {
+            "keyword": 0.19679185692195417,
+            "semantic": 0.5857948064804077,
+            "hybrid": 0.44964375029309106
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "RRJOKE",
+          "title": "Good Joke!",
+          "difficulty": 1163,
+          "tags": [
+            "ad-hoc",
+            "Algorithms",
+            "Constructive",
+            "Ad Hoc"
+          ],
+          "scores": {
+            "keyword": 0.0,
+            "semantic": 0.6892597675323486,
+            "hybrid": 0.4480188190937042
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        },
+        {
+          "code": "DEADFOOL",
+          "title": "Deadpool and his COOLEST Problem Ever",
+          "difficulty": 2636,
+          "tags": [],
+          "scores": {
+            "keyword": 0.24524173007428623,
+            "semantic": 0.48692816495895386,
+            "hybrid": 0.40233789188769453
+          },
+          "label": 0,
+          "reason": "does not use the single-source shortest paths technique"
+        }
+      ]
+    },
+    {
+      "id": "binary-search-answer",
+      "intent": "binary search on the answer",
+      "statement": "You may place at most K painters. A painter who works for T minutes can paint any contiguous run of fence segments whose lengths sum to at most T. What is the minimum T that finishes the fence?",
+      "pooled": [
+        {
+          "code": "PCJ18F",
+          "title": "Chef and Fencing",
+          "difficulty": 3162,
+          "tags": [
+            "Geometry",
+            "Trigonometry",
+            "Mathematics",
+            "Basic Math"
+          ],
+          "scores": {
+            "keyword": 0.1942877313273494,
+            "semantic": 0.6794612407684326,
+            "hybrid": 0.5096505005431246
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "EFFPAINT",
+          "title": "Efficient Painting",
+          "difficulty": 3519,
+          "tags": [
+            "Challenge Problem"
+          ],
+          "scores": {
+            "keyword": 0.10608563788980552,
+            "semantic": 0.6718860268592834,
+            "hybrid": 0.4738558877397339
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "TREERGB",
+          "title": "Paint the Tree",
+          "difficulty": 3519,
+          "tags": [
+            "DP on Trees",
+            "Advanced Algorithms",
+            "Advanced DP"
+          ],
+          "scores": {
+            "keyword": 0.08108439326636825,
+            "semantic": 0.6360399723052979,
+            "hybrid": 0.4418054898393501
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "PAINTING",
+          "title": "Crease Painting",
+          "difficulty": 2208,
+          "tags": [
+            "Observation",
+            "Brute Force",
+            "Hashing",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.04207669859596114,
+            "semantic": 0.6521933674812317,
+            "hybrid": 0.43865251250976134
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "PGNATK",
+          "title": "Pigeon Attack",
+          "difficulty": 620,
+          "tags": [],
+          "scores": {
+            "keyword": 0.07418307977483032,
+            "semantic": 0.6326262354850769,
+            "hybrid": 0.43717112800625835
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "RACINGEN",
+          "title": "Racing",
+          "difficulty": 1759,
+          "tags": [
+            "ad-hoc",
+            "Algorithms",
+            "Constructive",
+            "Ad Hoc"
+          ],
+          "scores": {
+            "keyword": 0.10295342829345036,
+            "semantic": 0.6100159883499146,
+            "hybrid": 0.43254409233015206
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "QUICKEXIT0",
+          "title": "Quick Exit",
+          "difficulty": 2475,
+          "tags": [
+            "depth-first-search",
+            "Depth First Search"
+          ],
+          "scores": {
+            "keyword": 0.011478029057270371,
+            "semantic": 0.6493124961853027,
+            "hybrid": 0.4260704088486335
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "WHITEWALL",
+          "title": "White Wall",
+          "difficulty": 1475,
+          "tags": [],
+          "scores": {
+            "keyword": 0.005559065594479956,
+            "semantic": 0.6516013741493225,
+            "hybrid": 0.42548656317489536
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        },
+        {
+          "code": "CHEFTRANS",
+          "title": "Chef and Vacation Transportation ",
+          "difficulty": 855,
+          "tags": [
+            "Conditional Statements",
+            "Basic Math",
+            "Basic Programming Concepts",
+            "Mathematics"
+          ],
+          "scores": {
+            "keyword": 0.08055698632064898,
+            "semantic": 0.5638171434402466,
+            "hybrid": 0.394676070566994
+          },
+          "label": 0,
+          "reason": "does not use the binary search on the answer technique"
+        }
+      ]
+    },
+    {
+      "id": "range-update-query",
+      "intent": "range updates and range sum queries",
+      "statement": "An array starts with N integers. There are two kinds of operations: add a value to every element from index L to R, and report the sum of elements from L to R. There are many operations.",
+      "pooled": [
+        {
+          "code": "TWOCLOSE",
+          "title": "Not-too-far Replacement",
+          "difficulty": 1336,
+          "tags": [],
+          "scores": {
+            "keyword": 0.2128200164887379,
+            "semantic": 0.7634956240653992,
+            "hybrid": 0.570759152472871
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "FUNAGP",
+          "title": "Fun with AGp",
+          "difficulty": 2632,
+          "tags": [
+            "Segment Trees",
+            "Fenwick Trees",
+            "Number Theory",
+            "Modulo Multiplicative Inverse",
+            "Advanced Data Structures",
+            "Advanced Tree Structures",
+            "Mathematics",
+            "Modular Arithmetic"
+          ],
+          "scores": {
+            "keyword": 0.22981833360561973,
+            "semantic": 0.7370176315307617,
+            "hybrid": 0.5594978712964975
+          },
+          "label": 1,
+          "reason": "segment-tree range updates over an array"
+        },
+        {
+          "code": "CONSTRRAY",
+          "title": "Construct Array",
+          "difficulty": 1624,
+          "tags": [
+            "Constructive",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.11807210863163659,
+            "semantic": 0.7843683958053589,
+            "hybrid": 0.5511646535713047
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "SUMARRAY",
+          "title": "Array Sum",
+          "difficulty": 2077,
+          "tags": [
+            "Constructive",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.12171068641524146,
+            "semantic": 0.782200813293457,
+            "hybrid": 0.5510292212023657
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "SUBSEQI",
+          "title": "Subtraction Sequence I",
+          "difficulty": 2640,
+          "tags": [
+            "Lazy Propagation",
+            "Observation",
+            "Advanced Data Structures",
+            "Advanced Tree Structures",
+            "Segment Trees",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.15121557343251066,
+            "semantic": 0.7620328664779663,
+            "hybrid": 0.5482467841097345
+          },
+          "label": 1,
+          "reason": "lazy-propagation range updates"
+        },
+        {
+          "code": "SUMREDUCTION",
+          "title": "Sum Reduction",
+          "difficulty": 1027,
+          "tags": [],
+          "scores": {
+            "keyword": 0.09254997053494851,
+            "semantic": 0.792864978313446,
+            "hybrid": 0.5477546928084173
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "COUARR",
+          "title": "Count The Arrays",
+          "difficulty": 2861,
+          "tags": [
+            "Basic Math",
+            "Dynamic Programming",
+            "Observation",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.07924945761213398,
+            "semantic": 0.7858762145042419,
+            "hybrid": 0.5385568048885205
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "SWAPABK",
+          "title": "Swap Sum",
+          "difficulty": 2101,
+          "tags": [
+            "data-structure"
+          ],
+          "scores": {
+            "keyword": 0.07216163156475505,
+            "semantic": 0.7895458936691284,
+            "hybrid": 0.5384613840512043
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "PRSUMARRHD",
+          "title": "Product Sum Arrays (Hard)",
+          "difficulty": 1978,
+          "tags": [
+            "dynamic-programming",
+            "Dynamic Programming"
+          ],
+          "scores": {
+            "keyword": 0.034225254233954755,
+            "semantic": 0.7931108474731445,
+            "hybrid": 0.5275008421557122
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "ONETOTHREE",
+          "title": "One To Three",
+          "difficulty": 1908,
+          "tags": [],
+          "scores": {
+            "keyword": 0.043059048987103374,
+            "semantic": 0.7877131700515747,
+            "hybrid": 0.5270842217185453
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "SQUEEZE",
+          "title": "Squeeze OR",
+          "difficulty": 3011,
+          "tags": [
+            "SOS DP",
+            "Advanced Algorithms",
+            "Advanced DP"
+          ],
+          "scores": {
+            "keyword": 0.14842910725650185,
+            "semantic": 0.7060947418212891,
+            "hybrid": 0.5109117637631491
+          },
+          "label": 0,
+          "reason": "does not use the range updates and range sum queries technique"
+        },
+        {
+          "code": "MARBLEGF",
+          "title": "Funny Marbles",
+          "difficulty": 1742,
+          "tags": [
+            "Fenwick Trees",
+            "Advanced Data Structures",
+            "Advanced Tree Structures"
+          ],
+          "scores": {
+            "keyword": 0.1500396646053877,
+            "semantic": 0.6448528170585632,
+            "hybrid": 0.4716681987987906
+          },
+          "label": 1,
+          "reason": "Fenwick tree range updates and queries"
+        }
+      ]
+    },
+    {
+      "id": "modpow",
+      "intent": "modular exponentiation",
+      "statement": "Given integers A, B and a prime modulus M, compute A raised to the power B modulo M. B can be as large as 10^18, so multiplying A by itself B times is too slow.",
+      "pooled": [
+        {
+          "code": "SEQTOWER",
+          "title": "Adding Up Sequences of Towers",
+          "difficulty": 3173,
+          "tags": [
+            "medium-hard",
+            "Medium Hard"
+          ],
+          "scores": {
+            "keyword": 0.16828996548449135,
+            "semantic": 0.7367252707481384,
+            "hybrid": 0.5377728930442363
+          },
+          "label": 1,
+          "reason": "recursive modular exponentiation"
+        },
+        {
+          "code": "A4",
+          "title": "The Rise and Fall of Power",
+          "difficulty": 2078,
+          "tags": [
+            "Arbitrary Precision",
+            "Basic Math",
+            "Mathematics"
+          ],
+          "scores": {
+            "keyword": 0.13031272997796617,
+            "semantic": 0.7355734705924988,
+            "hybrid": 0.5237321964762511
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        },
+        {
+          "code": "SUMDIV2",
+          "title": "Find an integer",
+          "difficulty": 1714,
+          "tags": [
+            "Mathematics"
+          ],
+          "scores": {
+            "keyword": 0.16326431131007604,
+            "semantic": 0.7145767211914062,
+            "hybrid": 0.5216173658120117
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        },
+        {
+          "code": "ICL1706",
+          "title": "Shubham Loves Maths",
+          "difficulty": 3125,
+          "tags": [
+            "arithmetic-progression",
+            "Arithmetic Progression"
+          ],
+          "scores": {
+            "keyword": 0.09336714073810692,
+            "semantic": 0.7313552498817444,
+            "hybrid": 0.5080593967803101
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        },
+        {
+          "code": "KBIGNUMB",
+          "title": "Eugene and big number",
+          "difficulty": 2203,
+          "tags": [
+            "Basic Math",
+            "Modular Exponentiation",
+            "Mathematics",
+            "Modular Arithmetic"
+          ],
+          "scores": {
+            "keyword": 0.04338448876842145,
+            "semantic": 0.7529566287994385,
+            "hybrid": 0.5046063559467246
+          },
+          "label": 1,
+          "reason": "tagged modular exponentiation"
+        },
+        {
+          "code": "MAGICMOD",
+          "title": "Magical Modulo",
+          "difficulty": 2471,
+          "tags": [
+            "Integer Factorisation",
+            "Observation",
+            "Mathematics",
+            "Number Theory",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.02637369284289002,
+            "semantic": 0.7319900989532471,
+            "hybrid": 0.4850243329727642
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        },
+        {
+          "code": "PRIME1",
+          "title": "Prime Generator",
+          "difficulty": 1069,
+          "tags": [
+            "Sqrt N Primality Check",
+            "Segmented Sieve",
+            "Mathematics",
+            "Number Theory",
+            "Primality Checking",
+            "Sieve of Eratosthenes"
+          ],
+          "scores": {
+            "keyword": 0.1520210071949545,
+            "semantic": 0.6633288860321045,
+            "hybrid": 0.48437111055770854
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        },
+        {
+          "code": "CHEFVEC",
+          "title": "Chef and Vectors",
+          "difficulty": 3018,
+          "tags": [
+            "DP Bitmask",
+            "Advanced Algorithms",
+            "Advanced DP"
+          ],
+          "scores": {
+            "keyword": 0.16055529733417076,
+            "semantic": 0.6412088871002197,
+            "hybrid": 0.4729801008797802
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        },
+        {
+          "code": "CHFING",
+          "title": "Chef and Ingredients",
+          "difficulty": 1774,
+          "tags": [
+            "Arithmetic",
+            "Mathematics",
+            "Basic Math"
+          ],
+          "scores": {
+            "keyword": 0.15312270130272626,
+            "semantic": 0.6290543675422668,
+            "hybrid": 0.4624782754177309
+          },
+          "label": 0,
+          "reason": "does not use the modular exponentiation technique"
+        }
+      ]
+    },
+    {
+      "id": "connected-components",
+      "intent": "connected components / union-find",
+      "statement": "There are N villages and M bidirectional roads. Two villages are in the same kingdom when you can walk between them using roads. How many kingdoms are there?",
+      "pooled": [
+        {
+          "code": "MSTONES",
+          "title": "Milestones",
+          "difficulty": 2078,
+          "tags": [
+            "Randomized Algorithms",
+            "Computational Geometry",
+            "Pigeonhole Principle",
+            "Advanced Algorithms",
+            "Mathematics",
+            "Set Theory"
+          ],
+          "scores": {
+            "keyword": 0.22816671968368757,
+            "semantic": 0.7492133975028992,
+            "hybrid": 0.566847045365014
+          },
+          "label": 0,
+          "reason": "does not use the connected components / union-find technique"
+        },
+        {
+          "code": "BRLADDER",
+          "title": "Bear and Ladder",
+          "difficulty": 999,
+          "tags": [
+            "Conditional Statements",
+            "Implementation",
+            "Basic Programming Concepts",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.21628675229807978,
+            "semantic": 0.7413266897201538,
+            "hybrid": 0.557562699701499
+          },
+          "label": 1,
+          "reason": "graph reachability between nodes"
+        },
+        {
+          "code": "TWOROADS",
+          "title": "Two Roads",
+          "difficulty": 2860,
+          "tags": [
+            "Geometry",
+            "Implementation",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.17661834866186316,
+            "semantic": 0.7202554941177368,
+            "hybrid": 0.5299824753267875
+          },
+          "label": 1,
+          "reason": "connecting villages with roads"
+        },
+        {
+          "code": "CLERVT",
+          "title": "The Kingdom of Ererraveth",
+          "difficulty": 2944,
+          "tags": [
+            "Trees",
+            "DP Bitmask",
+            "Bitmasking",
+            "Euler Tour",
+            "Data Structures",
+            "Graphs",
+            "Advanced Algorithms",
+            "Advanced DP",
+            "Mathematics",
+            "Bit Manipulation",
+            "Algorithms",
+            "Graph Algos",
+            "Traversals"
+          ],
+          "scores": {
+            "keyword": 0.1267393536132691,
+            "semantic": 0.7083805799484253,
+            "hybrid": 0.5048061447706561
+          },
+          "label": 0,
+          "reason": "does not use the connected components / union-find technique"
+        },
+        {
+          "code": "PSTONES",
+          "title": "Precious Stones ",
+          "difficulty": 2775,
+          "tags": [
+            "dp-on-trees",
+            "dynamic-programming",
+            "walsh-hadamard",
+            "Dynamic Programming"
+          ],
+          "scores": {
+            "keyword": 0.17335091743585823,
+            "semantic": 0.6708660125732422,
+            "hybrid": 0.49673572331469334
+          },
+          "label": 0,
+          "reason": "does not use the connected components / union-find technique"
+        },
+        {
+          "code": "KINGATCK",
+          "title": "Kingdom Attack",
+          "difficulty": 2439,
+          "tags": [
+            "Graphs",
+            "Connected Components",
+            "DFS",
+            "BFS",
+            "Data Structures",
+            "Advanced Algorithms",
+            "Advanced Graph Algos",
+            "Algorithms",
+            "Graph Algos",
+            "Traversals"
+          ],
+          "scores": {
+            "keyword": 0.18437158807578205,
+            "semantic": 0.6578516364097595,
+            "hybrid": 0.49213359863124173
+          },
+          "label": 1,
+          "reason": "tagged connected components, DFS/BFS"
+        },
+        {
+          "code": "KIRMEME",
+          "title": "Kirito in Memeland",
+          "difficulty": 2631,
+          "tags": [
+            "Trees",
+            "Centroid Decomposition",
+            "Divide and Conquer",
+            "DFS",
+            "Data Structures",
+            "Graphs",
+            "Advanced Algorithms",
+            "Advanced Graph Algos",
+            "Algorithms",
+            "Recursion",
+            "Graph Algos",
+            "Traversals"
+          ],
+          "scores": {
+            "keyword": 0.039050763032714514,
+            "semantic": 0.6875349879264832,
+            "hybrid": 0.46056548239157397
+          },
+          "label": 0,
+          "reason": "does not use the connected components / union-find technique"
+        }
+      ]
+    },
+    {
+      "id": "knapsack",
+      "intent": "0/1 knapsack dynamic programming",
+      "statement": "A thief can carry a bag of capacity W. There are N items, and each item has a weight and a value. Each item may be taken or left behind. Maximise the total value that fits in the bag.",
+      "pooled": [
+        {
+          "code": "AIRLINE",
+          "title": "Airline Restrictions",
+          "difficulty": 1042,
+          "tags": [
+            "Case work",
+            "Conditional Statements",
+            "Basic Math",
+            "Brute Force",
+            "Implementation",
+            "Special",
+            "Basic Programming Concepts",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.32506441298529093,
+            "semantic": 0.6861624121665955,
+            "hybrid": 0.5597780975519777
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "INTEREST",
+          "title": "Interest Accumulation",
+          "difficulty": 2445,
+          "tags": [
+            "dynamic-programming",
+            "easy-medium",
+            "prefix-sum",
+            "Dynamic Programming"
+          ],
+          "scores": {
+            "keyword": 0.17592561835013398,
+            "semantic": 0.6679114699363708,
+            "hybrid": 0.4957164069800267
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "POSHOP",
+          "title": "Posh Shopping",
+          "difficulty": 773,
+          "tags": [],
+          "scores": {
+            "keyword": 0.21938713371192264,
+            "semantic": 0.6423770189285278,
+            "hybrid": 0.49433054718178704
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "BALANCED",
+          "title": "Balanced Walks",
+          "difficulty": 2043,
+          "tags": [
+            "Bipartite Graphs",
+            "Greedy",
+            "Data Structures",
+            "Graphs",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.08201733479188021,
+            "semantic": 0.6980166435241699,
+            "hybrid": 0.4824168616260106
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "BYTESHOP",
+          "title": "Bytelandian Shoppers",
+          "difficulty": 2174,
+          "tags": [
+            "Combinatorics",
+            "Inclusion Exclusion Principle",
+            "Mathematics",
+            "Set Theory"
+          ],
+          "scores": {
+            "keyword": 0.2619300582777251,
+            "semantic": 0.5967631340026855,
+            "hybrid": 0.4795715515384849
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "ENG5",
+          "title": "Ross goes for Shopping",
+          "difficulty": 2396,
+          "tags": [
+            "Bitmasking",
+            "Dynamic Programming",
+            "Mathematics",
+            "Bit Manipulation",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.11660973002891925,
+            "semantic": 0.6740371584892273,
+            "hybrid": 0.47893755554788725
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "CHEFRP",
+          "title": "Chef and new recipe",
+          "difficulty": 1310,
+          "tags": [
+            "Basic Math",
+            "ad-hoc",
+            "Mathematics",
+            "Algorithms",
+            "Constructive",
+            "Ad Hoc"
+          ],
+          "scores": {
+            "keyword": 0.20032918543774528,
+            "semantic": 0.626086413860321,
+            "hybrid": 0.47707138093218726
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "KBOXES",
+          "title": "K Boxes",
+          "difficulty": 1506,
+          "tags": [],
+          "scores": {
+            "keyword": 0.0,
+            "semantic": 0.7189028263092041,
+            "hybrid": 0.4672868251800537
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        },
+        {
+          "code": "BUYGAME",
+          "title": "Buying Game",
+          "difficulty": 1852,
+          "tags": [],
+          "scores": {
+            "keyword": 0.18961228837608435,
+            "semantic": 0.5736351013183594,
+            "hybrid": 0.4392271167885631
+          },
+          "label": 0,
+          "reason": "does not use the 0/1 knapsack dynamic programming technique"
+        }
+      ]
+    },
+    {
+      "id": "max-subarray",
+      "intent": "maximum subarray sum",
+      "statement": "You are given the profit or loss of each day. Find the contiguous block of days with the largest total profit. The block may not be empty.",
+      "pooled": [
+        {
+          "code": "CHFPROFIT",
+          "title": "Chef and Profits",
+          "difficulty": 889,
+          "tags": [],
+          "scores": {
+            "keyword": 0.23239207672445364,
+            "semantic": 0.6624336242675781,
+            "hybrid": 0.5119190647460912
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        },
+        {
+          "code": "ADC",
+          "title": "Advitiya Coin",
+          "difficulty": 1682,
+          "tags": [],
+          "scores": {
+            "keyword": 0.16325360285378512,
+            "semantic": 0.6704698801040649,
+            "hybrid": 0.49294417114553807
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        },
+        {
+          "code": "MONOPOLY2",
+          "title": "Monopoly",
+          "difficulty": 578,
+          "tags": [
+            "Conditional Statements",
+            "Basic Math",
+            "Basic Programming Concepts",
+            "Mathematics"
+          ],
+          "scores": {
+            "keyword": 0.2844513179549407,
+            "semantic": 0.5957913994789124,
+            "hybrid": 0.48682236200482554
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        },
+        {
+          "code": "TANGLINGTREE",
+          "title": "Tangling Tree ",
+          "difficulty": 4076,
+          "tags": [
+            "Advanced DP",
+            "DP on Trees",
+            "Advanced Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.17225051123702997,
+            "semantic": 0.6381454467773438,
+            "hybrid": 0.47508221337776946
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        },
+        {
+          "code": "PRT",
+          "title": "Profitable Paths",
+          "difficulty": 2505,
+          "tags": [
+            "DP on Trees",
+            "Greedy",
+            "DFS",
+            "Sorting",
+            "Observation",
+            "Advanced Algorithms",
+            "Advanced DP",
+            "Algorithms",
+            "Graph Algos",
+            "Traversals"
+          ],
+          "scores": {
+            "keyword": 0.06340423189170978,
+            "semantic": 0.6900225877761841,
+            "hybrid": 0.4707061512956891
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        },
+        {
+          "code": "EVENT",
+          "title": "Event",
+          "difficulty": 1549,
+          "tags": [
+            "Basic Math",
+            "Implementation",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.07649990966521927,
+            "semantic": 0.673701286315918,
+            "hybrid": 0.46468078660677997
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        },
+        {
+          "code": "CARDSHUF",
+          "title": "Card Shuffle",
+          "difficulty": 2115,
+          "tags": [
+            "Treap",
+            "Splay Tree",
+            "Advanced Data Structures",
+            "Advanced Tree Structures"
+          ],
+          "scores": {
+            "keyword": 0.14636819978297255,
+            "semantic": 0.5431366562843323,
+            "hybrid": 0.4042676875681597
+          },
+          "label": 0,
+          "reason": "does not use the maximum subarray sum technique"
+        }
+      ]
+    },
+    {
+      "id": "topological-order",
+      "intent": "topological sort of a DAG",
+      "statement": "There are N tasks. Some pairs say that task A must be finished before task B can start. Output any order that finishes every task without breaking a rule.",
+      "pooled": [
+        {
+          "code": "CLEANUP",
+          "title": "Cleaning Up",
+          "difficulty": 1309,
+          "tags": [
+            "Sets",
+            "Data Structures"
+          ],
+          "scores": {
+            "keyword": 0.08283653628707724,
+            "semantic": 0.7052841186523438,
+            "hybrid": 0.487427458864036
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "CHEFTMA",
+          "title": "Chef and Time Machine",
+          "difficulty": 1717,
+          "tags": [
+            "1D Arrays",
+            "Multiset",
+            "Greedy",
+            "Data Structures",
+            "Arrays",
+            "Sets",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.12190101072666945,
+            "semantic": 0.6602863669395447,
+            "hybrid": 0.47185148928480614
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "WESTAND",
+          "title": "Chef and Direction",
+          "difficulty": 2869,
+          "tags": [],
+          "scores": {
+            "keyword": 0.04100582206987656,
+            "semantic": 0.6966302394866943,
+            "hybrid": 0.4671616695489502
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "WEIRD2",
+          "title": "Weird Question",
+          "difficulty": 1882,
+          "tags": [
+            "Frequency Arrays",
+            "Optimization Problems",
+            "Data Structures",
+            "Arrays",
+            "Special"
+          ],
+          "scores": {
+            "keyword": 0.03589356522183899,
+            "semantic": 0.6730152368545532,
+            "hybrid": 0.4500226339017098
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "CHEFSORT",
+          "title": "Chef and Sorting",
+          "difficulty": 2683,
+          "tags": [
+            "Bitwise Operation",
+            "Sorting",
+            "Mathematics",
+            "Bit Manipulation",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.0063733314517973585,
+            "semantic": 0.6736920475959778,
+            "hybrid": 0.4401304939652824
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "LOSTSEQ",
+          "title": "Careless Chef",
+          "difficulty": 1345,
+          "tags": [
+            "Basic Math",
+            "ad-hoc",
+            "Mathematics",
+            "Algorithms",
+            "Constructive",
+            "Ad Hoc"
+          ],
+          "scores": {
+            "keyword": 0.0,
+            "semantic": 0.6692081093788147,
+            "hybrid": 0.4349852502346039
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "DESTROY",
+          "title": "Chef and Destruction",
+          "difficulty": 2031,
+          "tags": [
+            "Priority Queue",
+            "1D Arrays",
+            "Greedy",
+            "Data Structures",
+            "Queues",
+            "Arrays",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.07156222256963851,
+            "semantic": 0.6255152821540833,
+            "hybrid": 0.4316316963983664
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "P4HOME",
+          "title": "Chef and Close Friends",
+          "difficulty": 749,
+          "tags": [
+            "Arrays",
+            "Basic Math",
+            "Data Structures",
+            "Mathematics"
+          ],
+          "scores": {
+            "keyword": 0.07544876055537023,
+            "semantic": 0.5793810486793518,
+            "hybrid": 0.40300473889526156
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        },
+        {
+          "code": "MISSP",
+          "title": "Chef and Dolls",
+          "difficulty": 1012,
+          "tags": [
+            "Frequency Arrays",
+            "Divisibility",
+            "Data Structures",
+            "Arrays",
+            "Mathematics",
+            "Modular Arithmetic"
+          ],
+          "scores": {
+            "keyword": 0.0757230483865788,
+            "semantic": 0.5044437646865845,
+            "hybrid": 0.35439149610018905
+          },
+          "label": 0,
+          "reason": "does not use the topological sort of a DAG technique"
+        }
+      ]
+    },
+    {
+      "id": "count-primes",
+      "intent": "sieve of Eratosthenes",
+      "statement": "Count how many integers from 2 up to N are prime. N can be as large as 10^7.",
+      "pooled": [
+        {
+          "code": "PPERM",
+          "title": "Prime Permutations",
+          "difficulty": 2092,
+          "tags": [
+            "Sieve of Eratosthenes",
+            "DP Approach",
+            "Mathematics",
+            "Number Theory",
+            "Algorithms",
+            "Dynamic Programming"
+          ],
+          "scores": {
+            "keyword": 0.2760708054857438,
+            "semantic": 0.7464784979820251,
+            "hybrid": 0.58183579666763
+          },
+          "label": 1,
+          "reason": "tagged sieve of Eratosthenes"
+        },
+        {
+          "code": "PRIMES2",
+          "title": "A Prime Conjecture",
+          "difficulty": 1619,
+          "tags": [
+            "Sieve of Eratosthenes",
+            "ad-hoc",
+            "Brute Force",
+            "Primes",
+            "Mathematics",
+            "Number Theory",
+            "Algorithms",
+            "Constructive",
+            "Ad Hoc"
+          ],
+          "scores": {
+            "keyword": 0.251743942681434,
+            "semantic": 0.7135505676269531,
+            "hybrid": 0.551918231014628
+          },
+          "label": 1,
+          "reason": "tagged sieve of Eratosthenes"
+        },
+        {
+          "code": "PERMUTATION2",
+          "title": "Permutation Pair",
+          "difficulty": 2468,
+          "tags": [
+            "Combinatorics",
+            "Brute Force",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.19313378425519864,
+            "semantic": 0.7419617176055908,
+            "hybrid": 0.5498719230515601
+          },
+          "label": 0,
+          "reason": "does not use the sieve of Eratosthenes technique"
+        },
+        {
+          "code": "PRIME1",
+          "title": "Prime Generator",
+          "difficulty": 1069,
+          "tags": [
+            "Sqrt N Primality Check",
+            "Segmented Sieve",
+            "Mathematics",
+            "Number Theory",
+            "Primality Checking",
+            "Sieve of Eratosthenes"
+          ],
+          "scores": {
+            "keyword": 0.28751984529756935,
+            "semantic": 0.6788032054901123,
+            "hybrid": 0.5418540175017933
+          },
+          "label": 1,
+          "reason": "segmented sieve of Eratosthenes"
+        },
+        {
+          "code": "NPRPE",
+          "title": "Not Prime Permutation",
+          "difficulty": 1447,
+          "tags": [
+            "Constructive",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.172212903260723,
+            "semantic": 0.7198630571365356,
+            "hybrid": 0.5281854913590722
+          },
+          "label": 0,
+          "reason": "does not use the sieve of Eratosthenes technique"
+        },
+        {
+          "code": "CNTARRAY",
+          "title": "Count of Array",
+          "difficulty": 2565,
+          "tags": [
+            "Permutations & Combinations",
+            "Inclusion Exclusion Principle",
+            "Mathematics",
+            "Set Theory",
+            "Combinatorics"
+          ],
+          "scores": {
+            "keyword": 0.14076070009797542,
+            "semantic": 0.7364087104797363,
+            "hybrid": 0.5279318949251911
+          },
+          "label": 0,
+          "reason": "does not use the sieve of Eratosthenes technique"
+        },
+        {
+          "code": "SUB7NUM",
+          "title": "Subsequence-Numbers Divisible by 7",
+          "difficulty": 1943,
+          "tags": [
+            "Basic Math",
+            "Dynamic Programming",
+            "Mathematics",
+            "Algorithms"
+          ],
+          "scores": {
+            "keyword": 0.09316607720066555,
+            "semantic": 0.7303754091262817,
+            "hybrid": 0.5073521191104582
+          },
+          "label": 0,
+          "reason": "does not use the sieve of Eratosthenes technique"
+        },
+        {
+          "code": "CHEFVEC",
+          "title": "Chef and Vectors",
+          "difficulty": 3018,
+          "tags": [
+            "DP Bitmask",
+            "Advanced Algorithms",
+            "Advanced DP"
+          ],
+          "scores": {
+            "keyword": 0.17492213821159183,
+            "semantic": 0.6432281732559204,
+            "hybrid": 0.4793210490694765
+          },
+          "label": 0,
+          "reason": "does not use the sieve of Eratosthenes technique"
+        }
+      ]
+    }
+  ]
+}

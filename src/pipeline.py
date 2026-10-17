@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from src.evaluate import demo_queries, run as evaluate
+from src.gold import score as score_gold
 from src.preprocess import preprocess, save
 from src.engine import build
 from src.explain import explain_all
@@ -58,6 +59,12 @@ def main() -> None:
     meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
     demos = demo_queries(metrics["best_alpha"])
     print(f"demo queries: {len(demos)}", flush=True)
+    try:
+        gold = score_gold()
+    except RuntimeError as exc:
+        print(f"manual gold skipped: {exc}", flush=True)
+    else:
+        print(f"manual gold scored: {gold['pooled_candidates']} candidates", flush=True)
     (ROOT / "reports" / "preprocess_summary.json").write_text(
         json.dumps(summary, indent=2), encoding="utf-8"
     )

@@ -87,6 +87,12 @@ Two extra slices:
 
 `reports/demo_queries.json` stores six statements written for this project (longest increasing subsequence, disguised shortest paths, binary search on the answer, range updates, modular exponentiation, connected components) and the problems the hybrid index returned.
 
+## Manual evaluation set
+
+The tag-based numbers cannot score a statement that is not in the collection. `src/gold.py` adds a small hand-labelled set: ten statements written for this project — the six demo prompts plus 0/1 knapsack, maximum subarray, topological order, and a prime count. For each statement the top five results of keyword, semantic, and hybrid search are pooled, so every mode's top five is judged, and each candidate is labelled by hand as the same technique (1) or not (0). Ambiguous candidates count as 0.
+
+Ninety candidates were judged; thirteen were relevant. On this set hybrid leads precision@5 (0.22) while semantic leads MRR (0.45). Ten queries is a small sample, so read the gaps as directional. The failures are the useful part: the knapsack statement returns problems about buying and bags, the painter-scheduling statement returns problems about painting, and the maximum-subarray statement returns problems about profit. The index follows the words even when the technique is different. Results are in `reports/gold_eval.md`.
+
 ## What the system gets wrong
 
 BGE-small was not trained on competitive-programming jargon, so it can tie together problems that share a setup ("Chef has N integers and T test cases") and miss a rare technique that is only named in a tag. TF-IDF does the opposite: it misses a shortest-path problem that never says "graph". Hybrid search is the compromise, and it still fails when both signals are weak. Clustering inherits the same geometry, so a cluster label is a summary of its members, not a proof that every member uses one algorithm.
@@ -114,6 +120,7 @@ Run the tests with `pip install -r dev-requirements.txt` then `pytest -q` (or `p
 | `src/preprocess.py` | Cleaning and tag filtering |
 | `src/engine.py` | TF-IDF, BGE embeddings, hybrid search, K-means, recommendations |
 | `src/evaluate.py` | Metrics, error slices, demo queries |
+| `src/gold.py` | Hand-labelled query set and its scoring |
 | `src/explain.py` | Per-cluster explanations and representative problems |
 | `src/visualize.py` | PCA map, cluster sizes, difficulty, tag chart |
 | `src/pipeline.py` | End-to-end run |

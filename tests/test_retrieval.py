@@ -69,6 +69,20 @@ class TestDejaCodePipeline(unittest.TestCase):
             self.assertTrue(info["narrative"].strip())
             self.assertGreaterEqual(len(info["representatives"]), 1)
 
+    def test_gold_set_labelled(self):
+        """Verify the manual gold set is fully labelled and scored."""
+        gold_path = ROOT / "reports" / "gold_set.json"
+        eval_path = ROOT / "reports" / "gold_eval.json"
+        self.assertTrue(gold_path.exists(), "gold_set.json missing")
+        self.assertTrue(eval_path.exists(), "gold_eval.json missing")
+        gold = json.loads(gold_path.read_text(encoding="utf-8"))
+        for query in gold["queries"]:
+            for candidate in query["pooled"]:
+                self.assertIsNotNone(candidate["label"], f"{query['id']}/{candidate['code']} unlabelled")
+        summary = json.loads(eval_path.read_text(encoding="utf-8"))
+        for mode in ("keyword", "semantic", "hybrid"):
+            self.assertIn("precision@5", summary["per_mode"][mode])
+
     def test_recommendation_engine(self):
         """Verify recommendation engine suggests valid unsolved problems."""
         recs = self.retriever.recommend(["FCTRL"], k=5)

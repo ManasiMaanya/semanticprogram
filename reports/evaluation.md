@@ -16,6 +16,26 @@ Relevance is automatic and tag-based. A problem is relevant to a query when they
 | semantic | 0.265 | 0.246 | 0.019 | 0.141 | 0.254 | 0.447 |
 | hybrid | 0.289 | 0.269 | 0.023 | 0.162 | 0.277 | 0.464 |
 
+## Recall@k
+
+Mean recall@k on the held-out queries for k = 1..50, plotted in `artifacts/figures/recall_at_k.png`. Recall@10 is small because the median query has 152 tagged cousins and only ten results are counted.
+
+| Method | R@5 | R@10 | R@25 | R@50 |
+| --- | --- | --- | --- | --- |
+| keyword | 0.013 | 0.023 | 0.049 | 0.085 |
+| semantic | 0.011 | 0.019 | 0.042 | 0.074 |
+| hybrid | 0.013 | 0.023 | 0.048 | 0.083 |
+
+## Split-seed variance
+
+The same tune/test protocol repeated under five split seeds (17, 29, 41, 53, 67). Values are mean ± std across seeds. A hybrid win that did not survive reseeding would show up here.
+
+| Method | P@10 | AP@10 | nDCG@10 | MRR |
+| --- | --- | --- | --- | --- |
+| keyword | 0.246 ± 0.004 | 0.141 ± 0.004 | 0.250 ± 0.005 | 0.430 ± 0.011 |
+| semantic | 0.234 ± 0.008 | 0.132 ± 0.006 | 0.242 ± 0.008 | 0.430 ± 0.012 |
+| hybrid | 0.259 ± 0.008 | 0.151 ± 0.005 | 0.265 ± 0.007 | 0.448 ± 0.011 |
+
 ## Same concept, different wording
 
 Each pair shares a specific topic tag, has token Jaccard under 0.10, and semantic similarity of at least 0.55. The neighbor is inside the top 20 by embedding similarity, so the stories can differ while the technique matches.

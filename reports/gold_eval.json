@@ -1,0 +1,467 @@
+{
+  "n_queries": 10,
+  "k": 5,
+  "pooled_candidates": 90,
+  "relevant_candidates": 13,
+  "relevance_rate": 0.14444444444444443,
+  "alpha": 0.65,
+  "per_mode": {
+    "keyword": {
+      "precision@5": 0.2,
+      "ndcg@5": 0.3638854056012473,
+      "mrr": 0.35
+    },
+    "semantic": {
+      "precision@5": 0.14,
+      "ndcg@5": 0.46934264036172707,
+      "mrr": 0.45
+    },
+    "hybrid": {
+      "precision@5": 0.22000000000000003,
+      "ndcg@5": 0.39528191779529676,
+      "mrr": 0.34500000000000003
+    }
+  },
+  "detail": {
+    "lis": {
+      "intent": "longest increasing subsequence",
+      "n_pooled": 9,
+      "n_relevant": 1,
+      "keyword": {
+        "top": "MMP",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "semantic": {
+        "top": "SEQLCS",
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.2,
+        "ndcg@5": 1.0,
+        "mrr": 1.0
+      },
+      "hybrid": {
+        "top": "MMP",
+        "labels": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "precision@5": 0.2,
+        "ndcg@5": 0.43067655807339306,
+        "mrr": 0.25
+      }
+    },
+    "dijkstra": {
+      "intent": "single-source shortest paths",
+      "n_pooled": 11,
+      "n_relevant": 1,
+      "keyword": {
+        "top": "DEADFOOL",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "semantic": {
+        "top": "POST",
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.2,
+        "ndcg@5": 1.0,
+        "mrr": 1.0
+      },
+      "hybrid": {
+        "top": "SLMNTRV",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "precision@5": 0.2,
+        "ndcg@5": 0.38685280723454163,
+        "mrr": 0.2
+      }
+    },
+    "binary-search-answer": {
+      "intent": "binary search on the answer",
+      "n_pooled": 9,
+      "n_relevant": 0,
+      "keyword": {
+        "top": "PCJ18F",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "semantic": {
+        "top": "PCJ18F",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "hybrid": {
+        "top": "PCJ18F",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "range-update-query": {
+      "intent": "range updates and range sum queries",
+      "n_pooled": 12,
+      "n_relevant": 3,
+      "keyword": {
+        "top": "FUNAGP",
+        "labels": [
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "precision@5": 0.6,
+        "ndcg@5": 0.9060254355346823,
+        "mrr": 1.0
+      },
+      "semantic": {
+        "top": "PRSUMARRHD",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "hybrid": {
+        "top": "TWOCLOSE",
+        "labels": [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "precision@5": 0.4,
+        "ndcg@5": 0.6240505200038379,
+        "mrr": 0.5
+      }
+    },
+    "modpow": {
+      "intent": "modular exponentiation",
+      "n_pooled": 9,
+      "n_relevant": 2,
+      "keyword": {
+        "top": "SEQTOWER",
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.2,
+        "ndcg@5": 1.0,
+        "mrr": 1.0
+      },
+      "semantic": {
+        "top": "KBIGNUMB",
+        "labels": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.4,
+        "ndcg@5": 1.0,
+        "mrr": 1.0
+      },
+      "hybrid": {
+        "top": "SEQTOWER",
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "precision@5": 0.4,
+        "ndcg@5": 0.8503449055347546,
+        "mrr": 1.0
+      }
+    },
+    "connected-components": {
+      "intent": "connected components / union-find",
+      "n_pooled": 7,
+      "n_relevant": 3,
+      "keyword": {
+        "top": "MSTONES",
+        "labels": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "precision@5": 0.6,
+        "ndcg@5": 0.7328286204777911,
+        "mrr": 0.5
+      },
+      "semantic": {
+        "top": "MSTONES",
+        "labels": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "precision@5": 0.4,
+        "ndcg@5": 0.6934264036172708,
+        "mrr": 0.5
+      },
+      "hybrid": {
+        "top": "MSTONES",
+        "labels": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "precision@5": 0.4,
+        "ndcg@5": 0.6934264036172708,
+        "mrr": 0.5
+      }
+    },
+    "knapsack": {
+      "intent": "0/1 knapsack dynamic programming",
+      "n_pooled": 9,
+      "n_relevant": 0,
+      "keyword": {
+        "top": "AIRLINE",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "semantic": {
+        "top": "KBOXES",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "hybrid": {
+        "top": "AIRLINE",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "max-subarray": {
+      "intent": "maximum subarray sum",
+      "n_pooled": 7,
+      "n_relevant": 0,
+      "keyword": {
+        "top": "MONOPOLY2",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "semantic": {
+        "top": "PRT",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "hybrid": {
+        "top": "CHFPROFIT",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "topological-order": {
+      "intent": "topological sort of a DAG",
+      "n_pooled": 9,
+      "n_relevant": 0,
+      "keyword": {
+        "top": "CHEFTMA",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "semantic": {
+        "top": "CLEANUP",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      },
+      "hybrid": {
+        "top": "CLEANUP",
+        "labels": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.0,
+        "ndcg@5": 0.0,
+        "mrr": 0.0
+      }
+    },
+    "count-primes": {
+      "intent": "sieve of Eratosthenes",
+      "n_pooled": 8,
+      "n_relevant": 3,
+      "keyword": {
+        "top": "PRIME1",
+        "labels": [
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "precision@5": 0.6,
+        "ndcg@5": 1.0,
+        "mrr": 1.0
+      },
+      "semantic": {
+        "top": "PPERM",
+        "labels": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "precision@5": 0.2,
+        "ndcg@5": 1.0,
+        "mrr": 1.0
+      },
+      "hybrid": {
+        "top": "PPERM",
+        "labels": [
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "precision@5": 0.6,
+        "ndcg@5": 0.9674679834891693,
+        "mrr": 1.0
+      }
+    }
+  }
+}

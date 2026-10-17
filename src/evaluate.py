@@ -163,6 +163,86 @@ def mode_scores(semantic, keyword, mode: str, alpha: float) -> np.ndarray:
     return alpha * semantic + (1.0 - alpha) * keyword
 
 
+def recall_curve(
+    semantic: np.ndarray,
+    keyword: np.ndarray,
+    queries: list[int],
+    relevance: list[set[int]],
+    alpha: float,
+    max_k: int = 50,
+) -> dict:
+    """Mean recall@k for k = 1..max_k, per retrieval mode."""
+    ks = list(range(1, max_k + 1))
+    curves: dict[str, list[float]] = {}
+    for mode, weight in (("keyword", 0.0), ("semantic", 1.0), ("hybrid", alpha)):
+        ranked = []
+        for query in queries:
+            if not relevance[query]:
+                continue
+            order = np.argsort(-mode_scores(semantic, keyword, mode, weight)[query])
+            flags = ranked_flags(order, query, relevance[query], max_k)
+            ranked.append((flags, len(relevance[query])))
+        curves[mode] = [
+            float(np.mean([sum(flags[:k]) / n_rel for flags, n_rel in ranked])) for k in ks
+        ]
+    return {"k": ks, **curves}
+
+
+def seed_variance(
+    semantic: np.ndarray,
+    keyword: np.ndarray,
+    queries: list[int],
+    relevance: list[set[int]],
+    seeds: tuple[int, ...] = (17, 29, 41, 53, 67),
+) -> dict:
+    """Re-run the tune/test protocol under several split seeds and report mean/std.
+
+    Guards against the reported hybrid win being an artifact of one lucky split.
+    """
+    grid = [0.0, 0.35, 0.5, 0.65, 0.8, 1.0]
+    collected: dict[str, dict[str, list[float]]] = {mode: {} for mode in ("keyword", "semantic", "hybrid")}
+    for seed in seeds:
+        order = list(queries)
+        np.random.default_rng(seed).shuffle(order)
+        cut = len(order) // 2
+        tune, test = order[:cut], order[cut:]
+        best_alpha, best_map = 0.65, -1.0
+        for alpha in grid:
+            metrics = evaluate_split(semantic, keyword, tune, relevance, alpha)
+            if metrics.get("ap@10", -1) > best_map:
+                best_alpha, best_map = alpha, metrics["ap@10"]
+        for mode, weight in (("keyword", 0.0), ("semantic", 1.0), ("hybrid", best_alpha)):
+            metrics = evaluate_split(semantic, keyword, test, relevance, weight)
+            for name, value in metrics.items():
+                collected[mode].setdefault(name, []).append(value)
+    return {
+        mode: {
+            name: {"mean": float(np.mean(values)), "std": float(np.std(values)), "n_seeds": len(values)}
+            for name, values in metrics.items()
+        }
+        for mode, metrics in collected.items()
+    }
+
+
+def plot_recall(curves: dict) -> Path:
+    import matplotlib.pyplot as plt
+
+    figures = ART / "figures"
+    figures.mkdir(parents=True, exist_ok=True)
+    fig, ax = plt.subplots(figsize=(8, 5))
+    for mode in ("keyword", "semantic", "hybrid"):
+        ax.plot(curves["k"], curves[mode], label=mode)
+    ax.set_xlabel("k")
+    ax.set_ylabel("recall@k")
+    ax.set_title("Recall@k on the held-out queries (tag-based relevance)")
+    ax.legend()
+    fig.tight_layout()
+    path = figures / "recall_at_k.png"
+    fig.savefig(path, dpi=160)
+    plt.close(fig)
+    return path
+
+
 def run() -> dict:
     REPORTS.mkdir(parents=True, exist_ok=True)
     frame = load_processed(ART / "problems.jsonl")
@@ -257,6 +337,10 @@ def run() -> dict:
     cross_story.sort(key=lambda row: row["semantic"] - row["lexical_jaccard"], reverse=True)
     errors.sort(key=lambda row: row["semantic"], reverse=True)
 
+    curves = recall_curve(semantic, keyword, test, relevance, best_alpha)
+    plot_recall(curves)
+    variance = seed_variance(semantic, keyword, queries, relevance)
+
     summary = {
         "n_problems": int(len(frame)),
         "n_queries": len(queries),
@@ -272,6 +356,8 @@ def run() -> dict:
         "error_count": len(errors),
         "cross_story_examples": cross_story[:12],
         "error_examples": errors[:12],
+        "recall_curve": curves,
+        "seed_variance": variance,
     }
     (REPORTS / "evaluation.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
     (REPORTS / "evaluation.md").write_text(render_markdown(summary), encoding="utf-8")
@@ -307,6 +393,42 @@ def render_markdown(summary: dict) -> str:
                 a=metrics["ap@10"],
                 n=metrics["ndcg@10"],
                 m=metrics["mrr"],
+            )
+        )
+    ks = summary["recall_curve"]["k"]
+    lines += [
+        "",
+        "## Recall@k",
+        "",
+        f"Mean recall@k on the held-out queries for k = 1..50, plotted in `artifacts/figures/recall_at_k.png`. Recall@10 is small because the median query has {summary['median_relevant']:.0f} tagged cousins and only ten results are counted.",
+        "",
+        "| Method | R@5 | R@10 | R@25 | R@50 |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for mode in ("keyword", "semantic", "hybrid"):
+        curve = summary["recall_curve"][mode]
+        lines.append(
+            f"| {mode} | {curve[ks.index(5)]:.3f} | {curve[ks.index(10)]:.3f} | "
+            f"{curve[ks.index(25)]:.3f} | {curve[ks.index(50)]:.3f} |"
+        )
+    lines += [
+        "",
+        "## Split-seed variance",
+        "",
+        "The same tune/test protocol repeated under five split seeds (17, 29, 41, 53, 67). Values are mean ± std across seeds. A hybrid win that did not survive reseeding would show up here.",
+        "",
+        "| Method | P@10 | AP@10 | nDCG@10 | MRR |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for mode in ("keyword", "semantic", "hybrid"):
+        row = summary["seed_variance"][mode]
+        lines.append(
+            "| {mode} | {p:.3f} ± {ps:.3f} | {a:.3f} ± {as_:.3f} | {n:.3f} ± {ns:.3f} | {m:.3f} ± {ms:.3f} |".format(
+                mode=mode,
+                p=row["precision@10"]["mean"], ps=row["precision@10"]["std"],
+                a=row["ap@10"]["mean"], as_=row["ap@10"]["std"],
+                n=row["ndcg@10"]["mean"], ns=row["ndcg@10"]["std"],
+                m=row["mrr"]["mean"], ms=row["mrr"]["std"],
             )
         )
     lines += [
