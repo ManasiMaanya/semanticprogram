@@ -1,0 +1,11 @@
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+matplotlib>=3.8
+joblib>=1.4
+beautifulsoup4>=4.12
+streamlit>=1.36
+sentence-transformers>=3.0
+torch>=2.2
+tqdm>=4.66
+plotly>=5.22
