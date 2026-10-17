@@ -6,7 +6,7 @@
 
 - **Repo:** https://github.com/ManasiMaanya/semanticprogram
 - **Branch:** `main`
-- **Last committed revision:** `1d129bb` (tags `v1.0`; `main` level with `origin`).
+- **Last committed revision:** `450290d` (tags `v1.0`; `main` level with `origin`).
 - **Snapshot date:** 2026-10-17
 - **Overall status:** functional and demonstrable. Every required deliverable and every
   bonus item exists and runs. Phase P0 is complete; what remains is hardening,
@@ -101,7 +101,7 @@ Estimates are focused-work hours for one person. `P0`/`P1` are effectively requi
 | 2026-10-17 | Audit | Cloned/linked repo, ran tests (5/5 pass), audited deliverables, found I-1…I-7, wrote this plan | `0e3b113` + dirty tree |
 | 2026-10-17 | P0 | Committed the six improved source/doc files plus `tests/`, `reports/`, and non-ignored `artifacts/` + `data/processed/`; pushed `main`; tagged `v1.0`. Tree clean, `origin/main` level. | `20c3f70`, tag `v1.0` |
 | 2026-10-17 | P1 | Fixed I-2 (MiniLM → BGE-small in "what the system gets wrong"), I-3 (clustering label threshold rewritten to match the 12% code path). Added `dev-requirements.txt` (pytest) and `pytest.ini`; documented `pytest -q` in README. | `1d129bb` |
-| 2026-10-17 | P3 | Added `src/explain.py` + `reports/clusters_explained.md/.json`: per-cluster specific-tag shares (variants merged), distinctive words, difficulty range, and the three centroid-nearest problems. Wired into `src/pipeline.py`, the app Clusters tab, and a new test (now 6 passing). Fixed I-4. | pending |
+| 2026-10-17 | P3 | Added `src/explain.py` + `reports/clusters_explained.md/.json`: per-cluster specific-tag shares (variants merged), distinctive words, difficulty range, and the three centroid-nearest problems. Wired into `src/pipeline.py`, the app Clusters tab, and a new test (now 6 passing). Fixed I-4. | `450290d` |
 
 ---
 
